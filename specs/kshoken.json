@@ -1,0 +1,113 @@
+{
+  "id": "kshoken-30s",
+  "name": "Kurage 商圏分析 30秒PV",
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "reading": "出店を考えるとき、その場所でいいのか、誰もが迷います。勘で決めるには、大きすぎる買い物です。そこで、住所を入れるだけ。名古屋駅、徒歩じゅっぷん圏の人口は、きゅうせんろっぴゃくさんじゅうよにん。円ではなく、道路網ベースの到達圏で出します。国勢調査のデータで、その場で。買い切り、ごまんごせんえん。",
+    "delay": 2.0,
+    "must_hear": [
+      "9634",
+      "5万5000円"
+    ],
+    "file": "/home/kojima/work/kpvgen/outputs/kshoken-30s/narration.wav"
+  },
+  "scenes": [
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kshoken-sales/pv/h3.mp4",
+      "duration": 12,
+      "fit": "blur",
+      "audio_volume": 0.3,
+      "telop": {
+        "main": "その場所で、いいのか？",
+        "sub": "出店判断の一次調査を、その場で",
+        "at": 0.5
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/kshoken.php/",
+      "duration": 3,
+      "load_seconds": 10,
+      "zoom_from": 1.05,
+      "zoom_to": 1.14,
+      "origin": [
+        "50%",
+        "22%"
+      ],
+      "telop": {
+        "main": "住所を入れるだけ。",
+        "sub": "駅名でも住所でも"
+      }
+    },
+    {
+      "type": "stats",
+      "duration": 5,
+      "title": "名古屋駅・徒歩10分圏（国勢調査500mメッシュ）",
+      "items": [
+        {
+          "value": 9634,
+          "label": "商圏人口（人）"
+        },
+        {
+          "value": 6199,
+          "label": "世帯数"
+        },
+        {
+          "value": 5171,
+          "label": "事業所数"
+        },
+        {
+          "value": 130551,
+          "label": "従業者数（昼間の働き手）"
+        }
+      ]
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/kshoken.php/?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E9%A7%85&minutes=10&mode=walk",
+      "duration": 4,
+      "load_seconds": 45,
+      "max_white_ratio": 0.7,
+      "zoom_from": 1.18,
+      "zoom_to": 1.3,
+      "origin": [
+        "62%",
+        "58%"
+      ],
+      "telop": {
+        "main": "円ではなく、道路網ベースの到達圏",
+        "sub": "川や線路の向こうは入らない"
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/kshoken.php/?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E9%A7%85&minutes=15&mode=drive",
+      "duration": 3,
+      "load_seconds": 45,
+      "max_white_ratio": 0.7,
+      "zoom_from": 1.0,
+      "zoom_to": 1.08,
+      "origin": [
+        "30%",
+        "50%"
+      ],
+      "telop": {
+        "main": "車15分なら 663,097人",
+        "sub": "徒歩と車を切り替えて比べられる"
+      }
+    },
+    {
+      "type": "endcard",
+      "duration": 3,
+      "title": "Kurage 商圏分析",
+      "sub": "住所ひとつで、徒歩圏の人口・世帯・事業所",
+      "price": "買い切り 55,000円（税込）／月額なし・ソース同梱",
+      "url1": "無料デモ  kurage.exbridge.jp/kshoken.php/",
+      "url2": "購入  kappstore.exbridge.jp",
+      "image": "/tmp/claude-1000/-home-kojima-work/7230f738-72fc-4ac2-ae71-cd89b6f444a1/scratchpad/kurage-mascot-cutout.webp",
+      "sync_to": "買い切り"
+    }
+  ]
+}
