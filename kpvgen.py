@@ -359,9 +359,11 @@ def verify(spec: dict, out: Path) -> None:
         # 万/千を展開した数字だけの形に潰してから比較する。
         def numfold(x: str) -> str:
             x = re.sub(r"[,，\s]", "", x)
+            # 千は万より先に展開する。「5万5千」を万が先に食うと 5万5→55000 の後に
+            # 千が残って 55000千=5500万 に化ける(2026-09-02実測)。
+            x = re.sub(r"(\d+)千", lambda m: str(int(m.group(1)) * 1000), x)
             x = re.sub(r"(\d+)万(\d+)", lambda m: str(int(m.group(1)) * 10000 + int(m.group(2)) * (1000 if len(m.group(2)) == 1 else 1)), x)
             x = re.sub(r"(\d+)万", lambda m: str(int(m.group(1)) * 10000), x)
-            x = re.sub(r"(\d+)千", lambda m: str(int(m.group(1)) * 1000), x)
             return x
         norm = numfold(t)
         missing = [m for m in must if numfold(m) not in norm]
@@ -412,8 +414,21 @@ def build(spec_path: Path, skip_capture: bool) -> None:
             print(f"  sync_to: 目標{target:.1f}秒が範囲外のためスキップ")
             break
         factor = target / before
-        for x in scenes[:idx]:
-            x["duration"] = round(float(x["duration"]) * factor, 2)
+        if factor > 1.0:
+            # 引き伸ばしはクリップ(実写素材)に掛けない。素材尺を超えると白落ちする
+            # (2026-09-02実測)。クリップ以外のシーンだけで伸び分を吸収する。
+            fixed = sum(float(x["duration"]) for x in scenes[:idx] if x.get("type") == "clip")
+            flex = before - fixed
+            if flex <= 0:
+                print("  sync_to: 可変シーンが無く引き伸ばし不可、同期をスキップ")
+                break
+            factor = (target - fixed) / flex
+            for x in scenes[:idx]:
+                if x.get("type") != "clip":
+                    x["duration"] = round(float(x["duration"]) * factor, 2)
+        else:
+            for x in scenes[:idx]:
+                x["duration"] = round(float(x["duration"]) * factor, 2)
         scenes[idx]["duration"] = round(total - sum(float(x["duration"]) for x in scenes[:idx]), 2)
         print(f"  sync_to: 「{kw}」発話={t_kw:.1f}秒(音声内) → シーン{idx}を{target:.1f}秒開始に調整"
               f" (前段を×{factor:.3f})")
