@@ -15,7 +15,7 @@
   "scenes": [
     {
       "type": "clip",
-      "file": "/home/kojima/work/kshoken-sales/pv/h3.mp4",
+      "file": "/home/kojima/work/kshoken-sales/pv/h3-local-16s.mp4",
       "duration": 12,
       "fit": "blur",
       "audio_volume": 0.3,
@@ -107,7 +107,8 @@
       "url1": "無料デモ  kurage.exbridge.jp/kshoken.php/",
       "url2": "購入  kappstore.exbridge.jp",
       "image": "/tmp/claude-1000/-home-kojima-work/7230f738-72fc-4ac2-ae71-cd89b6f444a1/scratchpad/kurage-mascot-cutout.webp",
-      "sync_to": "買い切り"
+      "sync_to": "買い切り",
+      "credit": "映像生成: MiniMax H3（セルフホスト）"
     }
   ]
 }

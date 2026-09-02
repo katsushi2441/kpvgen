@@ -162,6 +162,7 @@ ENDCARD_CSS = """
 .endcard .price { font-size:40px; font-weight:900; color:#0a726b; margin-top:26px; }
 .endcard .url { font-family:'JetBrains Mono',monospace; font-size:26px; color:#151a21; margin-top:18px; }
 .endcard .url2 { font-family:'JetBrains Mono',monospace; font-size:26px; color:#1668d6; margin-top:6px; }
+.endcard .credit { font-size:19px; color:#9aa7b4; margin-top:14px; }
 .endcard img { width:150px; margin-top:30px; }
 """
 
@@ -246,7 +247,9 @@ def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -
                      f'<div class="sub">{esc(e.get("sub"))}</div>'
                      f'<div class="price">{esc(e.get("price"))}</div>'
                      f'<div class="url">{esc(e.get("url1"))}</div>'
-                     f'<div class="url2">{esc(e.get("url2"))}</div>{img}</div>')
+                     f'<div class="url2">{esc(e.get("url2"))}</div>'
+                     + (f'<div class="credit">{esc(e.get("credit"))}</div>' if e.get("credit") else "")
+                     + f'{img}</div>')
         else:
             die(f"未知のscene type: {kind}")
 
