@@ -18,7 +18,7 @@
       "file": "/home/kojima/work/kshoken-sales/pv/h3-local-16s.mp4",
       "duration": 12,
       "fit": "blur",
-      "audio_volume": 0.3,
+      "audio_volume": 0.1,
       "telop": {
         "main": "その場所で、いいのか？",
         "sub": "出店判断の一次調査を、その場で",

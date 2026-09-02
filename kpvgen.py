@@ -206,7 +206,11 @@ def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -
         elif kind == "clip":
             src = Path(sc["file"])
             dst = f"assets/clip{i}.mp4"
-            shutil.copy(src, proj / dst)
+            # 音声トラックは剥がして映像のみ置く。hyperframesはmuted属性を無視して
+            # <video>の音声もフル音量で混ぜるため(bg+fgで二重・2026-09-02実測)、
+            # クリップ音声はclip{i}.mp3(音量焼き込み済み)だけに一本化する。
+            run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-c:v", "copy", "-an",
+                 str(proj / dst)])
             fit = sc.get("fit", "blur")
             if fit == "blur":   # 縦素材を横に敷く: ぼかし背景+中央
                 inner = (f'<video class="clipbg" src="{dst}" data-start="{t0:.2f}" '
@@ -218,11 +222,13 @@ def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -
                          f'data-duration="{dur:.2f}" muted playsinline preload="auto"></video>')
             if sc.get("audio_volume"):
                 amp3 = f"assets/clip{i}.mp3"
+                # hyperframesはdata-volumeを適用しない(0.4.44実測)。音量はmp3に焼き込む。
                 run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vn",
+                     "-filter:a", f"volume={sc['audio_volume']}",
                      "-b:a", "160k", str(proj / amp3)])
                 body.append(f'<audio src="{amp3}" data-start="{t0:.2f}" '
                             f'data-duration="{dur:.2f}" data-track-index="3" '
-                            f'data-volume="{sc["audio_volume"]}"></audio>')
+                            f'data-volume="1"></audio>')
         elif kind == "stats":
             cards = []
             for j, st in enumerate(sc["items"]):

@@ -1,0 +1,95 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "text": "見えない訪問者がいます。Google Analyticsはボットを除外するため、AIクローラーの訪問は見えません。AIクローラー計測ツールは、GPTBotやClaudeBotの訪問を実測。このデモサイトも、30日で9回、AIに読まれていました。読まれる状態かの診断つき、DB不要のPHP一式。買い切り5万5000円。",
+    "reading": "見えない訪問者がいます。グーグルアナリティクスはボットを除外するため、エーアイクローラーの訪問は見えません。エーアイクローラー計測ツールは、ジーピーティーボットや、クロードボットの訪問を実測。このデモサイトも、さんじゅうにちで、きゅうかい、エーアイに読まれていました。読まれる状態かの診断つき、ディービー不要の、ピーエイチピーいっしき。買い切り、ごまんごせんえん。",
+    "delay": 2.0,
+    "must_hear": [
+      "5万5000円",
+      "クローラー"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/ktrackgeo/outputs/pv/h3-local-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.1,
+      "telop": {
+        "main": "その訪問者は、見えていない。",
+        "sub": "Google Analyticsはボットを除外する"
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://proto.exbridge.jp/ktrackgeo/ktrackgeo.php?dashboard=1",
+      "duration": 4,
+      "load_seconds": 12,
+      "zoom_from": 1.04,
+      "zoom_to": 1.16,
+      "origin": [
+        "62%",
+        "12%"
+      ],
+      "telop": {
+        "main": "AIクローラーを、実測する。",
+        "sub": "AIに読まれた回数が数字で出る"
+      }
+    },
+    {
+      "type": "stats",
+      "duration": 5,
+      "title": "このデモサイトの直近30日（実測）",
+      "items": [
+        {
+          "value": 9,
+          "label": "AIに読まれた回数"
+        },
+        {
+          "value": 6,
+          "label": "検索エンジンの巡回"
+        },
+        {
+          "value": 8,
+          "label": "訪問した人"
+        },
+        {
+          "value": 41,
+          "label": "ページビュー"
+        }
+      ]
+    },
+    {
+      "type": "capture",
+      "url": "https://proto.exbridge.jp/ktrackgeo/ktrackgeo.php?dashboard=1",
+      "duration": 4,
+      "load_seconds": 12,
+      "zoom_from": 1.1,
+      "zoom_to": 1.28,
+      "origin": [
+        "35%",
+        "68%"
+      ],
+      "telop": {
+        "main": "どのAIが、いつ来たか。",
+        "sub": "GPTBot・ClaudeBot・PerplexityBotを識別"
+      }
+    },
+    {
+      "type": "endcard",
+      "duration": 9,
+      "sync_to": "買い切り",
+      "title": "AIクローラー計測ツール",
+      "sub": "GPTBotに読まれているか、実測でわかる",
+      "price": "買い切り 55,000円（税込）／月額なし・DB不要・MIT",
+      "url1": "無料デモ  proto.exbridge.jp/ktrackgeo/",
+      "url2": "購入  kappstore.exbridge.jp",
+      "credit": "映像生成: MiniMax H3（セルフホスト）",
+      "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png"
+    }
+  ],
+  "id": "ktrackgeo-30s",
+  "name": "ktrackgeo-30s"
+}
