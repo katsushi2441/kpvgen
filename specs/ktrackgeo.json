@@ -91,5 +91,11 @@
     }
   ],
   "id": "ktrackgeo-30s",
-  "name": "ktrackgeo-30s"
+  "name": "ktrackgeo-30s",
+  "poster": {
+    "time": 4.0,
+    "main": "そのAIの訪問、\n見えていますか。",
+    "sub": "買い切り 55,000円（税込）／GPTBot・ClaudeBotを実測",
+    "badge": "AIクローラー計測ツール"
+  }
 }

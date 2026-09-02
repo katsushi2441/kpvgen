@@ -138,6 +138,11 @@ TELOP_CSS = """
 .telop::before { content:""; position:absolute; left:0; top:0; bottom:0; width:9px; background:#e08a00; }
 .telop b { display:block; font-size:40px; font-weight:900; color:#151a21; line-height:1.4; }
 .telop span { display:block; font-size:21px; color:#5b6572; margin-top:2px; }
+/* 実写(clip)シーンは全面絵なのでテロップを大型化する */
+.telop.hero { left:64px; bottom:84px; padding:26px 40px 24px 48px; border-width:5px; }
+.telop.hero::before { width:12px; }
+.telop.hero b { font-size:72px; line-height:1.3; }
+.telop.hero span { font-size:30px; margin-top:8px; color:#42556a; font-weight:700; }
 """
 
 STATS_CSS = """
@@ -172,11 +177,12 @@ def esc(t: str) -> str:
     return _h.escape(str(t or ""))
 
 
-def telop_html(t: dict | None) -> str:
+def telop_html(t: dict | None, hero: bool = False) -> str:
     if not t:
         return ""
     sub = f"<span>{esc(t.get('sub'))}</span>" if t.get("sub") else ""
-    return f'<div class="telop"><b>{esc(t.get("main"))}</b>{sub}</div>'
+    cls = "telop hero" if hero else "telop"
+    return f'<div class="{cls}"><b>{esc(t.get("main"))}</b>{sub}</div>'
 
 
 def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -> Path:
@@ -262,7 +268,7 @@ def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -
         fade = ('opacity:0;" data-anim="fadein' if i else '"')
         body.append(f'<section class="scene" id="scene{i}" data-start="{t0:.2f}" '
                     f'data-duration="{dur:.2f}" style="z-index:{10+i};{fade}">'
-                    f'{inner}{telop_html(sc.get("telop"))}</section>')
+                    f'{inner}{telop_html(sc.get("telop"), hero=(kind == "clip"))}</section>')
         if i:
             gsap.append(f"tl.to('#scene{i}',{{opacity:1,duration:0.35}},{t0:.2f});")
         tel = sc.get("telop")
@@ -438,7 +444,58 @@ def build(spec_path: Path, skip_capture: bool) -> None:
     out = work / f"{spec.get('id', 'pv')}.mp4"
     render(proj, out)
     verify(spec, out)
+    if spec.get("poster"):
+        build_poster(spec, work, out)
     print(f"完成: {out}")
+
+
+def build_poster(spec: dict, work: Path, video: Path) -> None:
+    """サムネ(poster)生成: 完成動画のフレームに製品名・キャッチを大きく載せる。
+
+    spec["poster"] = {"time": 秒, "main": キャッチ, "sub": 補足, "badge": 製品名}
+    出力: <work>/poster.jpg (1280x720)
+    """
+    po = spec["poster"]
+    frame = work / "poster_frame.png"
+    # 背景は原則、テロップの焼き込まれていないクリップ素材から取る。
+    # (完成動画から取るとPV内テロップとposter文字が衝突する。2026-09-02実測)
+    src = video
+    if po.get("source", "clip") == "clip":
+        for sc in spec["scenes"]:
+            if sc.get("type") == "clip":
+                src = Path(sc["file"])
+                break
+    run(["ffmpeg", "-y", "-v", "error", "-ss", str(po.get("time", 3)), "-i", str(src),
+         "-frames:v", "1", str(frame)])
+    html = work / "poster.html"
+    html.write_text(f"""<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{width:1280px;height:720px;overflow:hidden;position:relative;
+  font-family:"Noto Sans CJK JP",sans-serif;background:#000}}
+img.bg{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}}
+.shade{{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,14,20,.88) 0%,rgba(10,14,20,.35) 45%,rgba(10,14,20,.05) 70%)}}
+.badge{{position:absolute;left:56px;top:48px;font-size:34px;font-weight:900;color:#fff;
+  background:#0a9a8f;border-radius:10px;padding:12px 28px;box-shadow:0 4px 14px rgba(0,0,0,.4)}}
+.main{{position:absolute;left:56px;right:56px;bottom:150px;font-size:88px;font-weight:900;
+  color:#fff;line-height:1.25;text-shadow:0 4px 18px rgba(0,0,0,.7)}}
+.sub{{position:absolute;left:56px;right:56px;bottom:64px;font-size:38px;font-weight:800;
+  color:#ffd76a;text-shadow:0 2px 10px rgba(0,0,0,.8)}}
+</style></head><body>
+<img class="bg" src="poster_frame.png">
+<div class="shade"></div>
+<div class="badge">{esc(po.get("badge", ""))}</div>
+<div class="main">{esc(po.get("main", "")).replace(chr(10), "<br>")}</div>
+<div class="sub">{esc(po.get("sub", ""))}</div>
+</body></html>""", encoding="utf-8")
+    shot = work / "poster_shot.png"
+    # 高さぴったりだとChromeが最下行を欠けさせる(kurage_webのOGPビルダーと同じ癖)。
+    # 大きめ(780)で撮って720にクロップする。
+    run(["/usr/bin/google-chrome", "--headless", "--disable-gpu", "--hide-scrollbars",
+         "--window-size=1280,780", f"--screenshot={shot}", f"file://{html}"],
+        env={**os.environ, "DISPLAY": ""})
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(shot), "-vf", "crop=1280:720:0:0",
+         "-q:v", "3", str(work / "poster.jpg")])
+    print(f"  poster OK {work / 'poster.jpg'}")
 
 
 def main() -> None:
