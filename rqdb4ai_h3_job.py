@@ -16,6 +16,15 @@ from typing import Any
 
 import requests
 
+def _comfy_free(comfy_url: str) -> None:
+    """ComfyUIにモデルのアンロードとメモリ解放を要求(待機中に約43GB握り続ける対策)。失敗は無視。"""
+    try:
+        requests.post(f"{comfy_url.rstrip('/')}/free",
+                      json={"unload_models": True, "free_memory": True}, timeout=20)
+    except Exception:
+        pass
+
+
 def _unload_ollama(ollama_url: str, timeout: int = 150) -> str:
     ollama_url = ollama_url.rstrip("/")
     try:
@@ -57,6 +66,9 @@ def h3_generate_job(
     comfy_url = comfy_url.rstrip("/")
     steps: list[str] = []
     steps.append(_unload_ollama(ollama_url))
+    # ComfyUIはH3モデル(約43GB)をRAMに保持し続け待機中も解放しない(0.14のメモリ逼迫の主因)。
+    # 前回の残骸を掃除してから生成し、生成後も解放する。
+    _comfy_free(comfy_url)
     r = requests.post(f"{comfy_url}/prompt", json={"prompt": workflow}, timeout=30)
     r.raise_for_status()
     pid = r.json().get("prompt_id")
@@ -98,4 +110,6 @@ def h3_generate_job(
     dst = Path(save_dir) / output_filename
     dst.write_bytes(v.content)
     steps.append(f"downloaded:{dst}")
+    _comfy_free(comfy_url)  # 生成した約43GBのモデルをRAMから解放
+    steps.append("comfy_freed")
     return {"video_path": str(dst), "bytes": len(v.content), "steps": steps, "source": source}
