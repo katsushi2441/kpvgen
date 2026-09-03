@@ -1,0 +1,103 @@
+{
+  "id": "karchitect-30s",
+  "name": "karchitect-30s",
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "text": "作りたいものはある。でも、要件がまとまらない。Kurage Architectは、AIが足りない前提を1問から3問ずつ聞いてきて、要件と設計書に育てるツールです。確定事項、提案、仮定、未決事項を分けて記録し、Markdown、要件JSON、Mermaid構成図、HTML、PDFで出力できます。会話も要件も、自分のサーバーの中だけ。買い切り、11万円。",
+    "reading": "つくりたいものはある。でも、ようけんがまとまらない。クラゲアーキテクトは、エーアイが足りないぜんていを、いちもんから、さんもんずつ聞いてきて、ようけんと、せっけいしょに育てるツールです。かくていじこう、ていあん、かてい、みけつじこうを分けて記録し、マークダウン、ようけんジェイソン、マーメイドこうせいず、エイチティーエムエル、ピーディーエフで出力できます。かいわもようけんも、じぶんのサーバーのなかだけ。かいきり、じゅういちまんえん。",
+    "delay": 2.0,
+    "must_hear": [
+      "11万円",
+      "設計書"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3_karchitect.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.1,
+      "telop": {
+        "main": "対話から、実装できる設計書へ。",
+        "sub": "曖昧なアイデアを、AIが要件に育てる"
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/karchitect.php",
+      "duration": 4,
+      "load_seconds": 10,
+      "zoom_from": 1.03,
+      "zoom_to": 1.15,
+      "origin": [
+        "50%",
+        "20%"
+      ],
+      "telop": {
+        "main": "作りたいものを一言書くだけ。",
+        "sub": "AIが足りない前提を1〜3問ずつ聞く"
+      },
+      "max_white_ratio": 0.97
+    },
+    {
+      "type": "stats",
+      "duration": 5,
+      "title": "Kurage Architect（AIと対話して設計書をつくる）",
+      "items": [
+        {
+          "value": 3,
+          "label": "一度に聞くのは1〜3問"
+        },
+        {
+          "value": 5,
+          "label": "出力形式（MD/JSON/Mermaid/HTML/PDF）"
+        },
+        {
+          "value": 4,
+          "label": "記録を4種に分類（確定/提案/仮定/未決）"
+        },
+        {
+          "value": 110000,
+          "label": "買い切り（円・税込）"
+        }
+      ]
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/karchitect.php",
+      "duration": 4,
+      "load_seconds": 10,
+      "zoom_from": 1.05,
+      "zoom_to": 1.18,
+      "origin": [
+        "38%",
+        "62%"
+      ],
+      "telop": {
+        "main": "構成図まで自動生成。",
+        "sub": "Mermaidで設計書に組み込まれる"
+      },
+      "max_white_ratio": 0.97
+    },
+    {
+      "type": "endcard",
+      "duration": 9,
+      "sync_to": "買い切り",
+      "title": "Kurage Architect",
+      "sub": "対話から、実装できる設計書へ",
+      "price": "買い切り 110,000円（税込）／ローカルAIで動くオープンソース",
+      "url1": "無料で始める  kurage.exbridge.jp/karchitect.php",
+      "url2": "購入  kappstore.exbridge.jp",
+      "credit": "映像生成: MiniMax H3（セルフホスト）",
+      "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png"
+    }
+  ],
+  "poster": {
+    "time": 4.0,
+    "main": "対話から、\n実装できる設計書へ。",
+    "sub": "買い切り 110,000円（税込）／AIが要件を1〜3問ずつ聞く",
+    "badge": "Kurage Architect"
+  }
+}
