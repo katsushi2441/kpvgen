@@ -1,0 +1,103 @@
+{
+  "id": "kdbagent-30s",
+  "name": "kdbagent-30s",
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "text": "AIにデータベースを任せたい。でも、全部は怖い。Kurage DB Agentは、宣言した表と操作だけを触らせる、1枚のPHPのDB管理ツールです。宣言していない削除は、ブラウザからもAIからも実行できません。MCPサーバー同梱で、Claude Codeからも安全に使えます。買い切り5万5000円。",
+    "reading": "エーアイに、データベースを任せたい。でも、全部は怖い。クラゲディービーエージェントは、宣言した表と操作だけを触らせる、いちまいのピーエイチピーの、ディービー管理ツールです。宣言していない削除は、ブラウザからも、エーアイからも実行できません。エムシーピーサーバー同梱で、クロードコードからも安全に使えます。買い切り、ごまんごせんえん。",
+    "delay": 2.0,
+    "must_hear": [
+      "5万5000円",
+      "データベース"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kdbagent-sales/pv/h3-local-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.1,
+      "telop": {
+        "main": "AIに、DBを全部は渡せない。",
+        "sub": "触っていいのは、宣言した範囲だけ"
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://proto.exbridge.jp/kdbagent/",
+      "duration": 4,
+      "load_seconds": 10,
+      "zoom_from": 1.04,
+      "zoom_to": 1.16,
+      "origin": [
+        "45%",
+        "18%"
+      ],
+      "telop": {
+        "main": "1枚のPHPで、範囲限定のDB管理。",
+        "sub": "phpMyAdminの代わりに"
+      },
+      "max_white_ratio": 0.97
+    },
+    {
+      "type": "stats",
+      "duration": 5,
+      "title": "Kurage DB Agent（宣言ベースのDB管理）",
+      "items": [
+        {
+          "value": 1,
+          "label": "PHPファイル（設置はこれだけ）"
+        },
+        {
+          "value": 3,
+          "label": "入口（人・CLI・HTTP API）"
+        },
+        {
+          "value": 7,
+          "label": "MCPツール同梱"
+        },
+        {
+          "value": 55000,
+          "label": "買い切り（円・税込）"
+        }
+      ]
+    },
+    {
+      "type": "capture",
+      "url": "https://proto.exbridge.jp/kdbagent/",
+      "duration": 4,
+      "load_seconds": 10,
+      "zoom_from": 1.1,
+      "zoom_to": 1.26,
+      "origin": [
+        "38%",
+        "52%"
+      ],
+      "telop": {
+        "main": "宣言していない操作は、誰にもできない。",
+        "sub": "削除もブラウザからもAIからも不可"
+      },
+      "max_white_ratio": 0.97
+    },
+    {
+      "type": "endcard",
+      "duration": 9,
+      "sync_to": "買い切り",
+      "title": "Kurage DB Agent",
+      "sub": "DB管理を、宣言した範囲だけAIに任せる",
+      "price": "買い切り 55,000円（税込）／月額なし・MCPサーバー同梱",
+      "url1": "無料デモ  proto.exbridge.jp/kdbagent/",
+      "url2": "購入  kappstore.exbridge.jp",
+      "credit": "映像生成: MiniMax H3（セルフホスト）",
+      "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png"
+    }
+  ],
+  "poster": {
+    "time": 4.0,
+    "main": "AIに触らせるのは、\n宣言した範囲だけ。",
+    "sub": "買い切り 55,000円（税込）／phpMyAdminの代わりに1枚",
+    "badge": "Kurage DB Agent"
+  }
+}
