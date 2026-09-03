@@ -57,7 +57,7 @@ def h3_generate_job(
     ollama_url: str = "http://192.168.0.14:11434",
     save_dir: str = "/home/kojima/work/kpvgen/outputs/h3_queue",
     poll_interval: int = 10,
-    generation_timeout: int = 3000,
+    generation_timeout: int = 4200,
     source: str = "rqdb4ai",
     **_: Any,
 ) -> dict[str, Any]:
@@ -66,9 +66,19 @@ def h3_generate_job(
     comfy_url = comfy_url.rstrip("/")
     steps: list[str] = []
     steps.append(_unload_ollama(ollama_url))
-    # ComfyUIはH3モデル(約43GB)をRAMに保持し続け待機中も解放しない(0.14のメモリ逼迫の主因)。
-    # 前回の残骸を掃除してから生成し、生成後も解放する。
-    _comfy_free(comfy_url)
+    try:
+        return _generate(workflow, output_filename, comfy_url, save_dir,
+                         poll_interval, generation_timeout, source, steps)
+    finally:
+        # ComfyUIはH3モデル(約43〜49GB)をRAMに保持し続け、待機中も解放しない(0.14メモリ逼迫の主因)。
+        # 成功・タイムアウト・エラーのどれで終わっても必ず解放する(finally)。
+        # 旧実装は「開始時にfree→コールドロードで生成が3000秒超→タイムアウトraise→
+        # 成功時のみのfreeが飛ぶ→49GB保持のまま残る」悪循環だった(2026-09-04 Zabbix再発)。
+        _comfy_free(comfy_url)
+
+
+def _generate(workflow, output_filename, comfy_url, save_dir,
+              poll_interval, generation_timeout, source, steps):
     r = requests.post(f"{comfy_url}/prompt", json={"prompt": workflow}, timeout=30)
     r.raise_for_status()
     pid = r.json().get("prompt_id")
@@ -110,6 +120,4 @@ def h3_generate_job(
     dst = Path(save_dir) / output_filename
     dst.write_bytes(v.content)
     steps.append(f"downloaded:{dst}")
-    _comfy_free(comfy_url)  # 生成した約43GBのモデルをRAMから解放
-    steps.append("comfy_freed")
     return {"video_path": str(dst), "bytes": len(v.content), "steps": steps, "source": source}
