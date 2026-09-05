@@ -1,0 +1,105 @@
+{
+  "id": "khazard-30s",
+  "name": "Kurage 土砂災害ハザードマップ 30秒PV",
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "reading": "その土地は、土砂災害警戒区域ですか。住所を入れるだけで、イエローゾーン、レッドゾーンの内外がわかります。全国よんじゅうななとどうふけん、およそひゃくななじゅうきゅうまんくいきを収録。区域外でも、じゅうよんメートル先が区域なら、そう伝えます。判定に使ったデータの時点も、必ず表示します。買い切り、ごまんごせんえん。",
+    "delay": 1.5,
+    "must_hear": [
+      "土砂災害",
+      "5万5000円"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/khazard.php/",
+      "duration": 5,
+      "load_seconds": 12,
+      "zoom_from": 1.02,
+      "zoom_to": 1.12,
+      "origin": [
+        "50%",
+        "18%"
+      ],
+      "telop": {
+        "main": "その土地は、警戒区域ですか。",
+        "sub": "住所を入れるだけ",
+        "at": 0.5
+      },
+      "max_white_ratio": 0.95
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/khazard.php/?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E5%90%89%E8%89%AF%E7%94%BA%E4%B9%99%E5%B7%9D%E8%97%A4%E5%85%BC",
+      "duration": 6,
+      "load_seconds": 25,
+      "max_white_ratio": 0.95,
+      "zoom_from": 1.1,
+      "zoom_to": 1.22,
+      "origin": [
+        "50%",
+        "34%"
+      ],
+      "telop": {
+        "main": "区域区分・現象・指定年月日まで",
+        "sub": "イエローゾーン / レッドゾーンを判別"
+      }
+    },
+    {
+      "type": "stats",
+      "duration": 5,
+      "title": "収録データ（国土数値情報 土砂災害警戒区域 A33）",
+      "items": [
+        {
+          "value": 47,
+          "label": "都道府県"
+        },
+        {
+          "value": 1793171,
+          "label": "収録区域数"
+        },
+        {
+          "value": 3,
+          "label": "現象の種類"
+        }
+      ]
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/khazard.php/?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E4%B8%80%E8%89%B2%E7%94%BA%E5%9F%8E%E3%82%B1%E6%B4%9E",
+      "duration": 7,
+      "load_seconds": 25,
+      "max_white_ratio": 0.95,
+      "zoom_from": 1.1,
+      "zoom_to": 1.24,
+      "origin": [
+        "50%",
+        "40%"
+      ],
+      "telop": {
+        "main": "「区域外」でも、14m先が区域なら伝える",
+        "sub": "住所の座標は町丁目のおおよその位置だから"
+      }
+    },
+    {
+      "type": "endcard",
+      "duration": 4,
+      "title": "Kurage 土砂災害ハザードマップ",
+      "sub": "判定に使ったデータの時点を、必ず表示します",
+      "price": "買い切り 55,000円（税込）／月額なし・ソース同梱",
+      "url1": "無料で試す  kurage.exbridge.jp/khazard.php/",
+      "url2": "購入  kappstore.exbridge.jp",
+      "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+      "sync_to": "買い切り",
+      "credit": "出典: 国土数値情報（土砂災害警戒区域データ）国土交通省 を加工して作成"
+    }
+  ],
+  "poster": {
+    "time": 12.0,
+    "main": "この住所は、\n土砂災害警戒区域ですか。",
+    "sub": "全国47都道府県・約179万区域／買い切り 55,000円（税込）",
+    "badge": "Kurage 土砂災害ハザードマップ"
+  }
+}
