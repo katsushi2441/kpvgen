@@ -1,0 +1,86 @@
+{
+  "id": "ktsunami-30s",
+  "name": "Kurage 津波浸水想定マップ 30秒PV",
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "reading": "その場所は、津波で何メートル浸かる想定ですか。れいてんさんメートルとごメートルでは、取るべき行動が違います。だから、まるばつでは答えません。浸水深の区分と、垂直避難で足りるか、高台へ逃げるべきかを返します。海抜も一緒に表示。区域外なのか、データが無いのかも区別します。全国さんびゃくななじゅうきゅうまんセルを収録。買い切り、ごまんごせんえん。",
+    "delay": 1.5,
+    "must_hear": ["津波", "5万5000円"]
+  },
+  "scenes": [
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/ktsunami-sales/pv/h3-ktsunami-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.12,
+      "telop": {
+        "main": "その場所、津波で何m浸かりますか。",
+        "sub": "○×では、行動が決められない",
+        "at": 0.6
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/ktsunami.php/",
+      "duration": 4,
+      "load_seconds": 12,
+      "zoom_from": 1.02,
+      "zoom_to": 1.12,
+      "origin": ["50%", "20%"],
+      "max_white_ratio": 0.95,
+      "telop": { "main": "住所を入れるだけ", "sub": "登録もログインも不要" }
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/ktsunami.php/?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E7%9F%B3%E5%B7%BB%E5%B8%82%E4%B8%AD%E5%A4%AE",
+      "duration": 5,
+      "load_seconds": 30,
+      "max_white_ratio": 0.95,
+      "zoom_from": 1.1,
+      "zoom_to": 1.22,
+      "origin": ["50%", "34%"],
+      "telop": { "main": "浸水深と、取るべき行動を返す", "sub": "海抜とデータの時点も併記" }
+    },
+    {
+      "type": "stats",
+      "duration": 4,
+      "title": "収録データ（国土数値情報 津波浸水想定 A40）",
+      "items": [
+        { "value": 3795197, "label": "収録セル" },
+        { "value": 35, "label": "都道府県" },
+        { "value": 5, "label": "浸水深の区分" }
+      ]
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/ktsunami.php/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%9D%B1%E5%8C%BA%E8%B1%8A%E6%B4%B2",
+      "duration": 5,
+      "load_seconds": 30,
+      "max_white_ratio": 0.95,
+      "zoom_from": 1.1,
+      "zoom_to": 1.24,
+      "origin": ["50%", "36%"],
+      "telop": { "main": "「区域外」と「データが無い」を区別", "sub": "東京都は国データに未収録。そう言います" }
+    },
+    {
+      "type": "endcard",
+      "duration": 4,
+      "title": "Kurage 津波浸水想定マップ",
+      "sub": "○×で答えない。データが無いなら、無いと言う",
+      "price": "買い切り 55,000円（税込）／月額なし・ソース同梱",
+      "url1": "無料で試す  kurage.exbridge.jp/ktsunami.php/",
+      "url2": "購入  kappstore.exbridge.jp",
+      "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+      "sync_to": "買い切り",
+      "credit": "映像生成: MiniMax H3（セルフホスト）／出典: 国土数値情報（津波浸水想定データ）国土交通省 を加工して作成"
+    }
+  ],
+  "poster": {
+    "time": 14.0,
+    "main": "その場所、津波で\n何メートル浸かりますか。",
+    "sub": "全国379万セル・35都道府県／買い切り 55,000円（税込）",
+    "badge": "Kurage 津波浸水想定マップ"
+  }
+}

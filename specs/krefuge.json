@@ -1,0 +1,116 @@
+{
+  "id": "krefuge-30s",
+  "name": "Kurage 避難所マップ 30秒PV",
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "reading": "その避難所は、その災害で使えますか。指定緊急避難場所は、災害の種類ごとに指定されています。地震で使えるのはななじゅうろくパーセント、津波ではさんじゅうごパーセントだけ。だから、いちばん近い避難所は出しません。住所を入れると、その災害で使える避難所まで、徒歩何分かを返します。全国じゅういちまんごせんけんを収録。買い切り、ごまんごせんえん。",
+    "delay": 1.5,
+    "must_hear": [
+      "避難所",
+      "5万5000円"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/krefuge-sales/pv/h3-krefuge-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.12,
+      "telop": {
+        "main": "その避難所、その災害で使えますか。",
+        "sub": "指定緊急避難場所は、災害種別ごとの指定です",
+        "at": 0.6
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/krefuge.php/",
+      "duration": 4,
+      "load_seconds": 12,
+      "zoom_from": 1.02,
+      "zoom_to": 1.12,
+      "origin": [
+        "50%",
+        "20%"
+      ],
+      "max_white_ratio": 0.95,
+      "telop": {
+        "main": "住所と災害種別を選ぶだけ",
+        "sub": "登録もログインも不要"
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/krefuge.php/?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E4%B8%80%E8%89%B2%E7%94%BA&hazard=landslid",
+      "duration": 5,
+      "load_seconds": 30,
+      "max_white_ratio": 0.95,
+      "zoom_from": 1.1,
+      "zoom_to": 1.22,
+      "origin": [
+        "50%",
+        "38%"
+      ],
+      "telop": {
+        "main": "徒歩49分。道路をたどって計算",
+        "sub": "直線距離ではありません"
+      }
+    },
+    {
+      "type": "stats",
+      "duration": 4,
+      "title": "収録データ（国土地理院 指定緊急避難場所データ）",
+      "items": [
+        {
+          "value": 115447,
+          "label": "収録件数"
+        },
+        {
+          "value": 8,
+          "label": "災害種別"
+        },
+        {
+          "value": 47,
+          "label": "都道府県"
+        }
+      ]
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/krefuge.php/?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%851-1-4&hazard=flood",
+      "duration": 5,
+      "load_seconds": 30,
+      "max_white_ratio": 0.95,
+      "zoom_from": 1.1,
+      "zoom_to": 1.24,
+      "origin": [
+        "50%",
+        "40%"
+      ],
+      "telop": {
+        "main": "データ時点は市町村ごとに表示",
+        "sub": "更新時期が自治体で違うから"
+      }
+    },
+    {
+      "type": "endcard",
+      "duration": 4,
+      "title": "Kurage 避難所マップ",
+      "sub": "「いちばん近い避難所」は出しません",
+      "price": "買い切り 55,000円（税込）／月額なし・ソース同梱",
+      "url1": "無料で試す  kurage.exbridge.jp/krefuge.php/",
+      "url2": "購入  kappstore.exbridge.jp",
+      "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+      "sync_to": "買い切り",
+      "credit": "映像生成: MiniMax H3（セルフホスト）／出典: 国土地理院「指定緊急避難場所データ」(CC BY 4.0) を加工して作成"
+    }
+  ],
+  "poster": {
+    "time": 14.0,
+    "main": "その避難所、\nその災害で使えますか。",
+    "sub": "全国115,447件・8災害種別／買い切り 55,000円（税込）",
+    "badge": "Kurage 避難所マップ"
+  }
+}
