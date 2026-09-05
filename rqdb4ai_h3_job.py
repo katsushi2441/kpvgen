@@ -105,7 +105,11 @@ def _generate(workflow, output_filename, comfy_url, save_dir,
             raise RuntimeError(f"comfy execution error: {msg}")
         if st.get("completed"):
             for o in (hist[pid].get("outputs") or {}).values():
-                for x in o.get("video", []) + o.get("videos", []) + o.get("gifs", []):
+                # SaveVideo の出力キーは ComfyUI の版で変わる。2026-09-05 実測では
+                # animated=true の "images" で返り、"video" しか見ていなかったため
+                # 生成は成功しているのに「produced no video」で落ちていた。全部見る。
+                for x in (o.get("video", []) + o.get("videos", [])
+                          + o.get("gifs", []) + o.get("images", [])):
                     out_name = (x.get("filename"), x.get("subfolder", ""))
             break
     if not out_name:

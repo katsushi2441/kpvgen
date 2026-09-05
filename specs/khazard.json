@@ -13,9 +13,21 @@
   },
   "scenes": [
     {
+      "type": "clip",
+      "file": "/home/kojima/work/khazard-sales/pv/h3-khazard-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.12,
+      "telop": {
+        "main": "その土地は、警戒区域ですか。",
+        "sub": "住所ひとつで、一次確認",
+        "at": 0.6
+      }
+    },
+    {
       "type": "capture",
       "url": "https://kurage.exbridge.jp/khazard.php/",
-      "duration": 5,
+      "duration": 4,
       "load_seconds": 12,
       "zoom_from": 1.02,
       "zoom_to": 1.12,
@@ -24,16 +36,15 @@
         "18%"
       ],
       "telop": {
-        "main": "その土地は、警戒区域ですか。",
-        "sub": "住所を入れるだけ",
-        "at": 0.5
+        "main": "住所を入れるだけ",
+        "sub": "登録もログインも不要"
       },
       "max_white_ratio": 0.95
     },
     {
       "type": "capture",
       "url": "https://kurage.exbridge.jp/khazard.php/?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E5%90%89%E8%89%AF%E7%94%BA%E4%B9%99%E5%B7%9D%E8%97%A4%E5%85%BC",
-      "duration": 6,
+      "duration": 5,
       "load_seconds": 25,
       "max_white_ratio": 0.95,
       "zoom_from": 1.1,
@@ -49,7 +60,7 @@
     },
     {
       "type": "stats",
-      "duration": 5,
+      "duration": 4,
       "title": "収録データ（国土数値情報 土砂災害警戒区域 A33）",
       "items": [
         {
@@ -69,7 +80,7 @@
     {
       "type": "capture",
       "url": "https://kurage.exbridge.jp/khazard.php/?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E4%B8%80%E8%89%B2%E7%94%BA%E5%9F%8E%E3%82%B1%E6%B4%9E",
-      "duration": 7,
+      "duration": 5,
       "load_seconds": 25,
       "max_white_ratio": 0.95,
       "zoom_from": 1.1,
@@ -93,11 +104,11 @@
       "url2": "購入  kappstore.exbridge.jp",
       "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
       "sync_to": "買い切り",
-      "credit": "出典: 国土数値情報（土砂災害警戒区域データ）国土交通省 を加工して作成"
+      "credit": "映像生成: MiniMax H3（セルフホスト）／出典: 国土数値情報（土砂災害警戒区域データ）国土交通省 を加工して作成"
     }
   ],
   "poster": {
-    "time": 12.0,
+    "time": 14.0,
     "main": "この住所は、\n土砂災害警戒区域ですか。",
     "sub": "全国47都道府県・約179万区域／買い切り 55,000円（税込）",
     "badge": "Kurage 土砂災害ハザードマップ"
