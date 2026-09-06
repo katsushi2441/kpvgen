@@ -1,0 +1,98 @@
+{
+ "id": "kecnavi-30s",
+ "name": "Kurage 通報先ナビ 30秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "道路の穴、不法投棄、街路灯の故障。これ、どこに言えばいいの。窓口は、道路は土木事務所、ごみは環境事業所、国道は国、危険は警察と、ばらばらです。通報先ナビは、困りごとから選ぶか、住所を入れるだけで、あなたの区の窓口の電話番号を返します。番号と受付時間は、市の公式ページから。出典と時点も表示。名古屋市じゅうろく区を収録。ほかの自治体は、データ二ファイルの差し替えで動きます。買い切り、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "通報",
+   "5万5000円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kecnavi-sales/pv/h3-kecnavi-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "これ、どこに言えばいいの？",
+    "sub": "道路・ごみ・国道・警察・水道で窓口が分かれている",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kecnavi.php/",
+   "duration": 4,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": ["50%", "24%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "困りごとから選ぶ、11種類",
+    "sub": "緊急連絡先は常に最上段"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kecnavi.php/?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%A4%A9%E7%99%BD%E5%8C%BA%E5%B3%B6%E7%94%B0%E4%BA%8C%E4%B8%81%E7%9B%AE",
+   "duration": 5,
+   "load_seconds": 30,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.1,
+   "zoom_to": 1.22,
+   "origin": ["50%", "62%"],
+   "telop": {
+    "main": "住所を入れると、区の窓口の電話番号",
+    "sub": "土木事務所・環境事業所・区役所。受付時間と時点も"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 4,
+   "title": "収録（名古屋市・市と各省庁の公式ページから）",
+   "items": [
+    {"value": 11, "label": "困りごと"},
+    {"value": 16, "label": "区"},
+    {"value": 32, "label": "土木・環境事業所"}
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kecnavi.php/c/dumping",
+   "duration": 5,
+   "load_seconds": 20,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.08,
+   "zoom_to": 1.2,
+   "origin": ["50%", "40%"],
+   "telop": {
+    "main": "不法投棄は、専用FAXと環境事業所",
+    "sub": "「連絡する順番」を番号・受付時間・出典つきで"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 4,
+   "title": "Kurage 通報先ナビ",
+   "sub": "窓口の分散を、1つの入口に。他の自治体は2ファイル差し替え",
+   "price": "買い切り 55,000円（税込）／月額なし・ソース同梱",
+   "url1": "無料で試す  kurage.exbridge.jp/kecnavi.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "sync_to": "買い切り",
+   "credit": "映像生成: MiniMax H3（セルフホスト）／区役所の所在地・座標: 名古屋市オープンデータ「施設カルテ」(CC BY 4.0)"
+  }
+ ],
+ "poster": {
+  "time": 14.0,
+  "main": "道路の穴、不法投棄。\nどこに言えばいいかを一発で。",
+  "sub": "困りごと11種×名古屋市16区／買い切り 55,000円（税込）",
+  "badge": "Kurage 通報先ナビ"
+ }
+}
