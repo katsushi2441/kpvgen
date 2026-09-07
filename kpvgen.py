@@ -460,13 +460,28 @@ def build_poster(spec: dict, work: Path, video: Path) -> None:
     # 背景は原則、テロップの焼き込まれていないクリップ素材から取る。
     # (完成動画から取るとPV内テロップとposter文字が衝突する。2026-09-02実測)
     src = video
-    if po.get("source", "clip") == "clip":
+    if po.get("file"):
+        # 明示指定（例: 2本目の実写クリップ）。テロップの無い素材を自由に選べる
+        src = Path(po["file"])
+    elif po.get("source", "clip") == "clip":
         for sc in spec["scenes"]:
             if sc.get("type") == "clip":
                 src = Path(sc["file"])
                 break
-    run(["ffmpeg", "-y", "-v", "error", "-ss", str(po.get("time", 3)), "-i", str(src),
+    # time が素材の尺を超えるとffmpegはフレームを出さず（exit 0）、posterが黒背景になる
+    # (kecnavi/ai-it-komon で発生 2026-09-07)。素材の尺に収める。
+    t = float(po.get("time", 3))
+    src_dur = media_duration(src)
+    if src_dur and t >= src_dur:
+        print(f"  poster: time {t}秒 が素材の尺 {src_dur:.1f}秒 を超えるため {max(src_dur - 0.5, 0):.1f}秒 に丸めます")
+        t = max(src_dur - 0.5, 0)
+    run(["ffmpeg", "-y", "-v", "error", "-ss", str(t), "-i", str(src),
          "-frames:v", "1", str(frame)])
+    if not frame.exists():
+        print(f"  poster: 素材からフレームを取れず、完成動画 {t}秒 から取ります")
+        run(["ffmpeg", "-y", "-v", "error", "-ss", str(t), "-i", str(video), "-frames:v", "1", str(frame)])
+    if not frame.exists():
+        die("poster のフレーム抽出に失敗")
     html = work / "poster.html"
     html.write_text(f"""<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 *{{margin:0;padding:0;box-sizing:border-box}}
