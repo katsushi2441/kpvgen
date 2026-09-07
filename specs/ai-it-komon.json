@@ -1,0 +1,121 @@
+{
+ "id": "ai-it-komon-40s",
+ "name": "名古屋のAI-IT顧問契約 40秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "エンジニアを雇いたい。でも、年収ごひゃくまんえんは重い。名古屋のエーアイ・アイティー顧問契約は、エンジニアを雇わずに、情報システム部門を持つサービスです。月じゅうごじかん、税別じゅうごまんえん。ITでできることを、AIを使ってひととおり引き受けます。さらに、クラゲアップストアの買い切りシステムは、契約期間中、無料で構築。外注されがちなごじゅう業務も、この時間の中で自動化します。名古屋市内限定。まずは、無料相談から。",
+  "delay": 1.5,
+  "must_hear": [
+   "顧問",
+   "15万円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-komon-a-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "エンジニアを雇いたい。でも、雇えない。",
+    "sub": "年収500万円＋社会保険料の会社負担＝年およそ600万円",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "image",
+   "file": "/home/kojima/work/exbridge_jp/pv/ai-it-komon/caps/hero.png",
+   "duration": 5,
+   "zoom_from": 1.02,
+   "zoom_to": 1.1,
+   "origin": [
+    "40%",
+    "35%"
+   ],
+   "sync_to": "顧問",
+   "telop": {
+    "main": "エンジニアを雇わずに、情報システム部門を持つ",
+    "sub": "名古屋のAI-IT顧問契約：月15時間・税別15万円・月次契約"
+   }
+  },
+  {
+   "type": "image",
+   "file": "/home/kojima/work/exbridge_jp/pv/ai-it-komon/caps/dekiru.png",
+   "duration": 5,
+   "zoom_from": 1.04,
+   "zoom_to": 1.14,
+   "origin": [
+    "50%",
+    "32%"
+   ],
+   "telop": {
+    "main": "ITでできることを、ひととおり引き受けます",
+    "sub": "調べる・決める・作る・売る・減らす"
+   }
+  },
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-komon-b-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "AIを使って、月15時間で引き受けます",
+    "sub": "オンサイト・Zoom・リモートを月ごとに組み合わせ",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "image",
+   "file": "/home/kojima/work/exbridge_jp/pv/ai-it-komon/caps/price2.png",
+   "duration": 5,
+   "zoom_from": 1.06,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "55%"
+   ],
+   "sync_to": "買い切り",
+   "telop": {
+    "main": "Kurage App Store のプロダクトは、契約期間中は無料",
+    "sub": "買い切りの業務システムを、製品代なしで構築"
+   }
+  },
+  {
+   "type": "image",
+   "file": "/home/kojima/work/exbridge_jp/pv/ai-it-komon/caps/outsourcing.png",
+   "duration": 4,
+   "zoom_from": 1.02,
+   "zoom_to": 1.1,
+   "origin": [
+    "50%",
+    "28%"
+   ],
+   "sync_to": "外注",
+   "telop": {
+    "main": "外注されがちな50業務を、AIで自動化",
+    "sub": "構築費は顧問契約に込み。仕組み・コード・手順は御社の資産"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 5,
+   "title": "名古屋のAI-IT顧問契約",
+   "sub": "エンジニアを雇わずに、情報システム部門を持つ",
+   "price": "月15時間・税別150,000円／月次契約・縛りなし",
+   "url1": "exbridge.jp/ai-it-komon.html",
+   "url2": "初回のご相談は無料（名古屋市内限定）",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "sync_to": "名古屋市内限定",
+   "credit": "映像生成: MiniMax H3（セルフホスト）"
+  }
+ ],
+ "poster": {
+  "time": 10.0,
+  "main": "エンジニアを雇わずに、\n情報システム部門を持つ。",
+  "sub": "月15時間・税別15万円／名古屋市内限定／Kurage App Storeの製品は契約中無料",
+  "badge": "AI-IT顧問契約"
+ }
+}
