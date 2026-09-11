@@ -1,0 +1,116 @@
+{
+ "id": "klcrm-30s",
+ "name": "Kurage LINE CRM 30秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "この前おはなしした者ですが。ラインの表示名は、たろう。本名も会社名もわかりません。ラインの管理画面には、だれで、なにを約束したかが残りません。クラゲ、ライン、シーアールエム。届いた相談を、人ごとに記録します。新しいメッセージが届けば、対応済みにした相手も、自動で未対応に戻ります。エム・シー・ピー、同梱。クロードコードや、コデックスから操作できます。買い切り、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "未対応",
+   "5万5000円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-klcrm-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "「この前お話しした者ですが」",
+    "sub": "LINEの表示名は「たろう」。本名も会社名も分からない",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "capture",
+   "url": "http://127.0.0.1:18312/?u=Udemo_sato",
+   "duration": 5,
+   "load_seconds": 12,
+   "zoom_from": 1.1,
+   "zoom_to": 1.24,
+   "origin": [
+    "16%",
+    "42%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "届いた相談を、人ごとに記録",
+    "sub": "未対応が先頭・赤い●。返したつもりの放置が起きない"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "http://127.0.0.1:18312/?u=Udemo_tanaka",
+   "duration": 6,
+   "load_seconds": 12,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.06,
+   "zoom_to": 1.18,
+   "origin": [
+    "78%",
+    "45%"
+   ],
+   "telop": {
+    "main": "1人1枚の大きなノート",
+    "sub": "会社名・本名・電話・メール。LINEの表示名とは別の欄"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 4,
+   "title": "AIエージェントから操作できる（MCP同梱）",
+   "items": [
+    {
+     "value": 8,
+     "label": "ツール"
+    },
+    {
+     "value": 3,
+     "label": "対応クライアント"
+    },
+    {
+     "value": 0,
+     "label": "月額（円）"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "http://127.0.0.1:18312/mcp.html",
+   "duration": 5,
+   "load_seconds": 20,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.0,
+   "zoom_to": 1.06,
+   "origin": [
+    "50%",
+    "50%"
+   ],
+   "telop": {
+    "main": "Claude Code / Codex から",
+    "sub": "「未対応は何件？」「この会社の経緯を3行で」が、そのまま通る"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 4,
+   "title": "Kurage LINE CRM",
+   "sub": "LINE公式アカウントの相談を人ごとに記録。MCPでAIから操作できる",
+   "price": "買い切り 55,000円（税込）／月額なし・MIT・ソース同梱",
+   "url1": "デモ  proto.exbridge.jp/klcrm/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "sync_to": "買い切り",
+   "credit": "映像生成: MiniMax H3（セルフホスト）"
+  }
+ ],
+ "poster": {
+  "time": 4.0,
+  "main": "「この前お話しした者ですが」\nに、答えられる窓口に。",
+  "sub": "LINE公式アカウントの相談を人ごとに記録。MCPでAIから操作できる",
+  "badge": "Kurage LINE CRM"
+ }
+}
