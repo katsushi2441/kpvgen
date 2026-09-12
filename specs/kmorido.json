@@ -1,0 +1,116 @@
+{
+ "id": "kmorido-30s",
+ "name": "Kurage 盛土規制区域マップ 30秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "この土地で、盛土はできますか。にせんにじゅういちねん、あたみ市の土石流を受けて、もりど規制法ができました。区域の中では、工事に許可か届け出が要ります。宅地造成等工事規制区域は、重要事項説明の対象です。ところが調べ方は、県の名前でぐーぐる検索。住所を入れてください。区域の種別と、告示番号と、施行年月日を返します。買い切り、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "告示番号",
+   "5万5000円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kmorido-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "この土地で、盛土はできますか。",
+    "sub": "2021年・熱海の土石流のあとにできた法律です",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kmorido.php/",
+   "duration": 4,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "住所を入れるだけ",
+    "sub": "盛土規制法の規制区域かどうかを判定"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kmorido.php/?q=%E7%86%B1%E6%B5%B7%E5%B8%82%E4%BC%8A%E8%B1%86%E5%B1%B1",
+   "duration": 6,
+   "load_seconds": 30,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.06,
+   "zoom_to": 1.18,
+   "origin": [
+    "50%",
+    "42%"
+   ],
+   "telop": {
+    "main": "告示番号まで返します",
+    "sub": "静岡県告示第799号の3／2025-05-26（熱海市伊豆山）"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 4,
+   "title": "収録（国土数値情報 A56・国土交通省／CC BY 4.0）",
+   "items": [
+    {
+     "value": 104309,
+     "label": "区域"
+    },
+    {
+     "value": 1539,
+     "label": "市区町村"
+    },
+    {
+     "value": 43,
+     "label": "都道府県"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kmorido.php/map/?lat=35.1214&lon=139.0736",
+   "duration": 5,
+   "load_seconds": 30,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.04,
+   "zoom_to": 1.15,
+   "origin": [
+    "50%",
+    "55%"
+   ],
+   "telop": {
+    "main": "区域の広がりは地図で",
+    "sub": "クリックした地点の種別と告示番号が出る"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 4,
+   "title": "Kurage 盛土規制区域マップ",
+   "sub": "大規模盛土造成地マップは「盛土がある」。規制区域は「許可が要る」。",
+   "price": "買い切り 55,000円（税込）／月額なし・ソース同梱",
+   "url1": "無料で試す  kurage.exbridge.jp/kmorido.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "sync_to": "買い切り",
+   "credit": "映像生成: MiniMax H3（セルフホスト）／区域データ: 国土数値情報「宅地造成等工事規制区域・特定盛土等規制区域」国土交通省"
+  }
+ ],
+ "poster": {
+  "time": 4.0,
+  "main": "その土地で盛土、\n許可は要りませんか。",
+  "sub": "盛土規制法の規制区域を、住所ひとつで。告示番号つき",
+  "badge": "Kurage 盛土規制区域マップ"
+ }
+}
