@@ -1,0 +1,39 @@
+{
+ "id": "kjishin-30s",
+ "name": "Kurage 地震ハザードマップ（名古屋版）30秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "南海トラフが来たら、うちは何震度ですか。名古屋市内は、ほぼ全域が震度ろくじゃく以上です。住所を入れてください。想定される震度と、液状化の危険度を返します。地番を入れると、土地の区画の形で判定します。名古屋市は地番参考図を公開しているので、代表点ではなく、敷地にかかる範囲で答えられます。エム・シー・ピー同梱。買い切り、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": ["液状化", "5万5000円"]
+ },
+ "scenes": [
+  {"type":"clip","file":"/home/kojima/work/kpvgen/outputs/h3_queue/h3-kjishin-8s.mp4","duration":8,
+   "fit":"blur","audio_volume":0.12,
+   "telop":{"main":"南海トラフが来たら、うちは何震度？","sub":"名古屋市内はほぼ全域が震度6弱以上（6弱51.5%・6強46.4%）","at":0.6}},
+  {"type":"capture","url":"https://kurage.exbridge.jp/kjishin.php/","duration":4,"load_seconds":15,
+   "zoom_from":1.02,"zoom_to":1.12,"origin":["50%","30%"],"max_white_ratio":0.95,
+   "telop":{"main":"住所でも、地番でも","sub":"南海トラフ最大クラスの想定を名古屋市の公開データから"}},
+  {"type":"capture",
+   "url":"https://kurage.exbridge.jp/kjishin.php/?q=%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%85%E4%B8%80%E4%B8%81%E7%9B%AE1015-14",
+   "duration":6,"load_seconds":30,"max_white_ratio":0.95,
+   "zoom_from":1.06,"zoom_to":1.18,"origin":["50%","44%"],
+   "telop":{"main":"筆の形で判定します","sub":"19メッシュにかかり、計測震度6.06〜6.18という幅で返る"}},
+  {"type":"stats","duration":4,"title":"収録（名古屋市オープンデータ／CC BY 4.0）",
+   "items":[{"value":126385,"label":"メッシュ"},{"value":982180,"label":"筆"},{"value":3,"label":"MCPツール"}]},
+  {"type":"capture","url":"https://kurage.exbridge.jp/kjishin.php/about","duration":5,"load_seconds":20,
+   "max_white_ratio":0.95,"zoom_from":1.04,"zoom_to":1.14,"origin":["50%","46%"],
+   "telop":{"main":"「判定対象外」は「液状化しない」ではない","sub":"意味が非公開の値を、分布の実測で確定した"}},
+  {"type":"endcard","duration":4,
+   "title":"Kurage 地震ハザードマップ（名古屋版）",
+   "sub":"活断層マップは「震源」。こちらは「揺れの結果」。",
+   "price":"買い切り 55,000円（税込）／月額なし・MCP同梱・ソース同梱",
+   "url1":"無料で試す  kurage.exbridge.jp/kjishin.php/",
+   "url2":"購入  kappstore.exbridge.jp",
+   "image":"/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "sync_to":"買い切り",
+   "credit":"映像生成: MiniMax H3（セルフホスト）／データ: 名古屋市オープンデータ（CC BY 4.0）"}
+ ],
+ "poster":{"time":4.0,"main":"そこは何震度で、\n液状化しますか。","sub":"南海トラフ最大クラスの想定を、住所と地番で","badge":"Kurage 地震ハザードマップ"}
+}
