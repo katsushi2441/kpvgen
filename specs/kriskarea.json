@@ -1,0 +1,116 @@
+{
+ "id": "kriskarea-30s",
+ "name": "Kurage 災害危険区域マップ 30秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "ハザードマップは、浸水しますと教えてくれます。でも、その土地に家を建てられるかは、教えてくれません。建築基準法さんじゅうきゅう条の、災害危険区域。条例で、住宅の建築が禁止されたり、床の高さに条件が付く区域です。住所を入れるだけで、根拠の条例、告示番号、制限の内容まで返します。全国で、にまんいっせん区域を収録。買い切り、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "災害危険区域",
+   "5万5000円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kriskarea-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "その土地、家を建てられますか？",
+    "sub": "ハザードマップは「浸水します」しか教えてくれない",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kriskarea.php/",
+   "duration": 4,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "26%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "住所を入れるだけ",
+    "sub": "建築基準法39条の災害危険区域を判定"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kriskarea.php/?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%B8%AF%E5%8C%BA%E6%B8%AF%E6%98%8E1-12-20",
+   "duration": 5,
+   "load_seconds": 30,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.08,
+   "zoom_to": 1.2,
+   "origin": [
+    "50%",
+    "48%"
+   ],
+   "telop": {
+    "main": "根拠条例・告示番号・制限の内容まで",
+    "sub": "名古屋市臨海部防災区域建築条例（高潮・出水）"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 4,
+   "title": "収録（国土数値情報 災害危険区域・国土交通省）",
+   "items": [
+    {
+     "value": 21067,
+     "label": "区域"
+    },
+    {
+     "value": 588,
+     "label": "自治体"
+    },
+    {
+     "value": 36,
+     "label": "都道府県"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kriskarea.php/map/?lat=35.10817&lon=136.885086",
+   "duration": 5,
+   "load_seconds": 25,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.05,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "55%"
+   ],
+   "telop": {
+    "main": "区域の広がりは地図で",
+    "sub": "クリックした地点の判定と根拠条例が出る"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 4,
+   "title": "Kurage 災害危険区域マップ",
+   "sub": "ハザードマップの手前で効く、条例による建築制限を住所ひとつで",
+   "price": "買い切り 55,000円（税込）／月額なし・ソース同梱",
+   "url1": "無料で試す  kurage.exbridge.jp/kriskarea.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "sync_to": "買い切り",
+   "credit": "映像生成: MiniMax H3（セルフホスト）／区域データ: 国土数値情報「災害危険区域」国土交通省"
+  }
+ ],
+ "poster": {
+  "time": 4.0,
+  "main": "その土地、\n条例で建てられない\nかもしれません。",
+  "sub": "建築基準法39条の災害危険区域を、住所ひとつで判定",
+  "badge": "Kurage 災害危険区域マップ"
+ }
+}

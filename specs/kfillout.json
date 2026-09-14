@@ -1,0 +1,117 @@
+{
+ "id": "kfillout-30s",
+ "name": "Kurage 申請書記入アシスト 30秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "また、おなじことを書いています。会社名、所在地、代表者。名古屋市の、しんせいようしきは、よんせんにじゅうよん件。オンラインで終わるのは、にじゅうななパーセントでした。申請書のファイルを上げてください。空欄を見つけて、わかるところだけを埋めて、もとの書式のまま、おかえしします。エーアイに、文章は作らせません。わからない欄は、空のまま残します。買い切り、じゅういちまんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "4024",
+   "27",
+   "11万"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kfillout-a-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "また、おなじことを書いている",
+    "sub": "会社名・所在地・代表者を、様式のたびに書き写す",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 4,
+   "title": "名古屋市の申請様式（市の公開データを集計・2026-09-14）",
+   "items": [
+    {
+     "value": 4024,
+     "label": "様式"
+    },
+    {
+     "value": 81,
+     "label": "％がダウンロード様式"
+    },
+    {
+     "value": 27,
+     "label": "％だけオンライン完結"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kfillout.php/",
+   "duration": 4,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "36%"
+   ],
+   "max_white_ratio": 0.97,
+   "telop": {
+    "main": "様式のファイルを、上げるだけ",
+    "sub": "Word・Excel・PDF／旧形式の .doc .xls も"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kfillout.php/about",
+   "duration": 6,
+   "load_seconds": 20,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "52%"
+   ],
+   "max_white_ratio": 0.97,
+   "telop": {
+    "main": "様式を変えない",
+    "sub": "PDFに変換しない。旧形式は元の形式へ戻すので、指定様式のまま出せる"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kfillout.php/profile",
+   "duration": 4,
+   "load_seconds": 15,
+   "zoom_from": 1.03,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "40%"
+   ],
+   "max_white_ratio": 0.97,
+   "telop": {
+    "main": "AIに文章は作らせない",
+    "sub": "日付・保存した会社情報・あなたの入力だけ。わからない欄は空のまま残す"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 4,
+   "title": "Kurage 申請書記入アシスト",
+   "sub": "空欄を見つけて、わかるところだけを埋める。",
+   "price": "買い切り 110,000円（税込）／月額なし・MCP同梱・ソース同梱（MIT）",
+   "url1": "無料で試す  kurage.exbridge.jp/kfillout.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "sync_to": "買い切り",
+   "credit": "映像生成: MiniMax H3（セルフホスト）／集計: 名古屋市 申請・手続き検索の公開データ"
+  }
+ ],
+ "poster": {
+  "time": 4.0,
+  "main": "また、おなじことを\n書いていませんか。",
+  "sub": "申請書のWord・Excel・PDFを、書式そのままで埋める",
+  "badge": "Kurage 申請書記入アシスト"
+ }
+}

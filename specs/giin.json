@@ -1,0 +1,95 @@
+{
+ "id": "giin-30s",
+ "name": "Kurage 議員発言ログ 30秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "その議員は、国会で何と言いましたか。あいちの、こっかいぎいん、よんじゅうごにん。ただし、はつげん数を、そのまま数えてはいけません。あるぎいんは、ろっぴゃくいちけんのうち、しつぎは、ごけんでした。のこりは、いいんちょうとしての、ぎじせいりです。わけて数えます。ようやくは、しません。かいきり、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "45",
+   "601",
+   "5万5000"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-giin-a-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "その議員は国会で、何と言いましたか",
+    "sub": "会議録は公開されている。でも、その人の発言だけを追うのは難しい",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 5,
+   "title": "ある議員の、収録期間の発言（国会会議録から集計・2026-09-14）",
+   "items": [
+    {
+     "value": 601,
+     "label": "件の発言"
+    },
+    {
+     "value": 5,
+     "label": "件だけが質疑"
+    },
+    {
+     "value": 596,
+     "label": "件は議事整理"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://xb4g.com/giin/fujikawa-masahito",
+   "duration": 5,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.97,
+   "telop": {
+    "main": "質疑・答弁・議事整理を、分けて数える",
+    "sub": "混ぜると、委員長を務めた議員が「よく質問している人」に見えてしまう",
+    "at": 0.4
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://xb4g.com/giin/theme/nenshu-no-kabe",
+   "duration": 5,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.1,
+   "origin": [
+    "50%",
+    "34%"
+   ],
+   "max_white_ratio": 0.97,
+   "telop": {
+    "main": "ことがらから、だれが何件ふれたかを引く",
+    "sub": "要約しません。抜粋と、会議録へのリンクだけ",
+    "at": 0.4
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 6,
+   "title": "Kurage 議員発言ログ",
+   "price": "55,000円（税込）買い切り",
+   "url": "xb4g.com/giin/",
+   "sub": "PHPとSQLiteだけ・LLM不使用・MCP同梱",
+   "url1": "xb4g.com/giin/",
+   "url2": "kappstore.exbridge.jp",
+   "credit": "出典: 国立国会図書館 国会会議録検索システム"
+  }
+ ]
+}
