@@ -1,0 +1,131 @@
+{
+  "id": "khokan-pv-30s",
+  "name": "Kurage 訪問看護ナビ 30秒PV",
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "reading": "退院の相談で、ケアマネジャーから「訪問看護ステーション、ひなた」と言われた。でも、ひなたは全国に三十七軒あります。どれのことでしょうか。クラゲ訪問看護ナビは、その名前で検索した人に、その一軒のことを公開データで答えます。住所、電話、利用できる曜日、運営法人。同じ名前の別の事業所は、住所で見分けられます。住所を入れれば、近い順にも並びます。厚生局の届出名簿を突き合わせて、二十四時間対応、精神科訪問看護、特別管理加算の届出があるかも出します。医療保険で使うのか、介護保険で使うのか。要介護度ごとの上限も、引き表にしました。全国一万八千四百三十六軒。ピーエイチピー一ファイルで、レンタルサーバーに置くだけ。オンプレミスで、ごまんごせんえん。",
+    "delay": 1.2,
+    "must_hear": [
+      "訪問看護",
+      "5万5000円"
+    ]
+  },
+  "poster": {
+    "time": 4.0,
+    "main": "名前を聞いた、\nその1軒はどこか。",
+    "sub": "住所・電話・曜日・届出を公開データで／オンプレミス 55,000円（税込）",
+    "badge": "Kurage 訪問看護ナビ",
+    "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khokan-a-8s.mp4"
+  },
+  "scenes": [
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khokan-a-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.12,
+      "telop": {
+        "main": "「訪問看護ステーション ひなた」と言われた",
+        "sub": "でも「ひなた」は全国に37軒ある",
+        "at": 0.6
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/khokan.php/n/%E3%81%B2%E3%81%AA%E3%81%9F",
+      "duration": 8,
+      "load_seconds": 12,
+      "max_white_ratio": 0.95,
+      "zoom_from": 1.02,
+      "zoom_to": 1.12,
+      "origin": [
+        "50%",
+        "24%"
+      ],
+      "telop": {
+        "main": "同じ名前の別事業所を、住所で見分ける",
+        "sub": "都道府県・市区町村・住所・電話を並べる",
+        "at": 0.5
+      }
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khokan-b-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.12,
+      "telop": {
+        "main": "その1軒に、電話をかけられる",
+        "sub": "住所・電話・利用可能曜日・運営法人",
+        "at": 0.5
+      }
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/khokan.php/s/2360190017",
+      "duration": 9,
+      "load_seconds": 12,
+      "max_white_ratio": 0.95,
+      "zoom_from": 1.02,
+      "zoom_to": 1.14,
+      "origin": [
+        "50%",
+        "52%"
+      ],
+      "telop": {
+        "main": "24時間対応・精神科・特別管理の届出があるか",
+        "sub": "地方厚生局の届出名簿を電話番号で突き合わせ",
+        "at": 0.5
+      }
+    },
+    {
+      "type": "stats",
+      "duration": 5,
+      "title": "収録（厚生労働省・地方厚生局の公開データを加工して作成）",
+      "items": [
+        {
+          "value": 18436,
+          "label": "訪問看護ステーション"
+        },
+        {
+          "value": 47,
+          "label": "都道府県"
+        },
+        {
+          "value": 2225,
+          "label": "届出を突き合わせた軒数（東海北陸）"
+        }
+      ]
+    },
+    {
+      "type": "capture",
+      "url": "https://kurage.exbridge.jp/khokan.php/seido/",
+      "duration": 8,
+      "load_seconds": 12,
+      "max_white_ratio": 0.95,
+      "zoom_from": 1.04,
+      "zoom_to": 1.16,
+      "origin": [
+        "50%",
+        "40%"
+      ],
+      "telop": {
+        "main": "医療保険か、介護保険か",
+        "sub": "要介護度ごとの月の上限も引き表に",
+        "at": 0.5
+      }
+    },
+    {
+      "type": "endcard",
+      "duration": 10,
+      "title": "Kurage 訪問看護ナビ",
+      "sub": "訪問看護ステーションを、名前と住所から。出典：厚生労働省・地方厚生局の公開データ",
+      "price": "オンプレミス 55,000円（税込）／月額なし・ソース同梱",
+      "url1": "無料で試す  kurage.exbridge.jp/khokan.php/",
+      "url2": "購入  kappstore.exbridge.jp",
+      "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+      "credit": "映像生成: MiniMax H3"
+    }
+  ]
+}
