@@ -1,0 +1,72 @@
+[
+ {
+  "engine": "acestep",
+  "seconds": 60,
+  "status": "JobStatus.FINISHED",
+  "wall_s": 54,
+  "start": "19:57:05",
+  "end": "19:57:59",
+  "file": "bench-acestep-60s.mp3",
+  "steps": [
+   "vram_free",
+   "unit_start",
+   "submitted:ce99c1d0-c509-4678-8188-36f0c3c1cf1b",
+   "downloaded:/home/kojima/work/kpvgen/outputs/music_bench/bench-acestep-60s.mp3",
+   "unit_stop"
+  ],
+  "bytes": 960813,
+  "elapsed_gen_s": null
+ },
+ {
+  "engine": "heartmula",
+  "seconds": 60,
+  "status": "JobStatus.FINISHED",
+  "wall_s": 81,
+  "start": "19:57:59",
+  "end": "19:59:20",
+  "file": "bench-heartmula-60s.mp3",
+  "steps": [
+   "vram_free",
+   "remote_dir:/home/kojima/heartlib/outputs/rq-20260916-195759",
+   "generated:80s",
+   "downloaded:/home/kojima/work/kpvgen/outputs/music_bench/bench-heartmula-60s.mp3"
+  ],
+  "bytes": 1443501,
+  "elapsed_gen_s": 80
+ },
+ {
+  "engine": "acestep",
+  "seconds": 180,
+  "status": "JobStatus.FINISHED",
+  "wall_s": 75,
+  "start": "19:59:20",
+  "end": "20:00:35",
+  "file": "bench-acestep-180s.mp3",
+  "steps": [
+   "vram_free",
+   "unit_start",
+   "submitted:0af1ee57-9b97-44f2-9732-76dea2940d6b",
+   "downloaded:/home/kojima/work/kpvgen/outputs/music_bench/bench-acestep-180s.mp3",
+   "unit_stop"
+  ],
+  "bytes": 2880813,
+  "elapsed_gen_s": null
+ },
+ {
+  "engine": "heartmula",
+  "seconds": 180,
+  "status": "JobStatus.FINISHED",
+  "wall_s": 168,
+  "start": "20:00:35",
+  "end": "20:03:23",
+  "file": "bench-heartmula-180s.mp3",
+  "steps": [
+   "vram_free",
+   "remote_dir:/home/kojima/heartlib/outputs/rq-20260916-200151",
+   "generated:88s",
+   "downloaded:/home/kojima/work/kpvgen/outputs/music_bench/bench-heartmula-180s.mp3"
+  ],
+  "bytes": 1710189,
+  "elapsed_gen_s": 88
+ }
+]
