@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """HeartMuLa oss-3B の曲生成を rqdb4ai の heartmula-192-168-0-14 キューに投入する。
   /usr/bin/python3 enqueue_heartmula.py --lyrics-file lyrics.txt --tags-file tags.txt --seconds 60 --out song.mp3 [--wait]
@@ -17,6 +18,7 @@ ap.add_argument("--out", required=True)
 ap.add_argument("--cfg", type=float, default=1.5)
 ap.add_argument("--wait", action="store_true")
 a = ap.parse_args()
+a.out = os.path.abspath(a.out)  # 相対パスだと worker 側で outputs/ の下に二重に付いて scp が落ちる
 c = Redis.from_url("redis://127.0.0.1:6379/0")
 job = Queue("heartmula-192-168-0-14", connection=c).enqueue(
     "rqdb4ai_heartmula_job.heartmula_generate_job",
