@@ -1,0 +1,117 @@
+{
+ "id": "kgakudo-40s",
+ "name": "Kurage 学童保育ナビ 40秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "学童保育に入れなかった子どもは、全国でいちまんろくせんさんびゃくさんじゅうにん。でも、そのさんじゅういちパーセントは、どの市にいるのか、国の資料から分かりません。公表はピーディーエフだけ。市の名前で数字が出るのは、待機がごじゅうにん以上の、はちじゅうはち市町村だけです。クラゲ学童保育ナビは、そのピーディーエフを開いて、住所ひとつで返します。保育園の待機児童も、同じ住所で出ます。公表されていない市町村は、数字を作らず、未公表と書きます。ピーエイチピー、いちファイルで動きます。オンプレミス、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "学童保育",
+   "未公表",
+   "5万5000円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kgakudo-8s.mp4",
+   "duration": 9,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "学童に入れなかった子は、全国で16,330人",
+    "sub": "こども家庭庁の全国調査（令和7年5月1日現在）",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kgakudo.php/",
+   "duration": 6,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "22%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "住所を入れるだけ",
+    "sub": "登録もログインも要りません"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "国が市区町村名で公表しているのは、ここまで",
+   "items": [
+    {
+     "value": 16330,
+     "label": "全国の待機児童（人）"
+    },
+    {
+     "value": 88,
+     "label": "名前が出る市町村"
+    },
+    {
+     "value": 5122,
+     "label": "どの市か分からない（人）"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kgakudo.php/?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E6%A9%BF%E5%8E%9F%E5%B8%82%E5%85%AB%E6%9C%A8%E7%94%BA1-1",
+   "duration": 7,
+   "load_seconds": 25,
+   "zoom_from": 1.08,
+   "zoom_to": 1.2,
+   "origin": [
+    "50%",
+    "32%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "学童は「未公表」。でも保育園の待機は68人",
+    "sub": "分からないものは、数字を作らず未公表と書きます"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kgakudo.php/waiting50",
+   "duration": 5,
+   "load_seconds": 12,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "待機が50人以上の88市町村",
+    "sub": "CSVとJSONで取り出せます"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 8,
+   "title": "Kurage 学童保育ナビ",
+   "sub": "学童保育と保育園の待機児童を、住所ひとつで。出典：こども家庭庁の全国調査",
+   "price": "オンプレミス 55,000円（税込）／月額なし・ソース同梱・PHP1ファイル",
+   "url1": "無料で試す  kurage.exbridge.jp/kgakudo.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "学童の待機児童、\n自分の市の数字は？",
+  "sub": "国の公表は88市町村だけ／オンプレミス 55,000円（税込）",
+  "badge": "Kurage 学童保育ナビ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kgakudo-8s.mp4"
+ }
+}
