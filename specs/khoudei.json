@@ -1,0 +1,117 @@
+{
+ "id": "khoudei-38s",
+ "name": "Kurage 放課後等デイサービスナビ 38秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "放課後等デイサービスは、全国でにまんごせんにじゅうかしょ。よねんはんまえの、いちまんよんせんろっぴゃくろくじゅうさんかしょから、いってんななじゅういちばいに増えました。でも、おなじ期間に、公表データから消えた事業所も、さんぜんひゃくじゅうよんかしょあります。ふえたがわだけを見ても、この分野の動きは分かりません。クラゲ放課後等デイサービスナビは、住所ひとつで、通える範囲の事業所をきょり順に返します。空き状況も、支援の内容も、公表がないので出しません。ピーエイチピー、いちファイルで動きます。オンプレミス、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "放課後等デイサービス",
+   "公表",
+   "5万5000円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khoudei-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "放課後等デイは4年半で1.71倍。同じ期間に3,114か所が消えた",
+    "sub": "障害福祉サービス等情報公表システム（WAM NET）のオープンデータを集計",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/khoudei.php/",
+   "duration": 5,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "22%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "住所を入れるだけ",
+    "sub": "登録もログインも要りません"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "2026年3月末時点の公表データ",
+   "items": [
+    {
+     "value": 56258,
+     "label": "収録している事業所"
+    },
+    {
+     "value": 25020,
+     "label": "うち放課後等デイ"
+    },
+    {
+     "value": 3114,
+     "label": "公表データから消えた"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/khoudei.php/?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E7%91%9E%E7%A9%82%E5%8C%BA%E5%A6%99%E9%9F%B3%E9%80%9A&km=2",
+   "duration": 6,
+   "load_seconds": 25,
+   "zoom_from": 1.06,
+   "zoom_to": 1.18,
+   "origin": [
+    "50%",
+    "34%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "通える範囲を、近い順に",
+    "sub": "定員・営業時間・連絡先つき。空き状況と支援の内容は公表がないので出しません"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/khoudei.php/gone",
+   "duration": 5,
+   "load_seconds": 15,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "消えた事業所を、都道府県・市区町村ごとに",
+    "sub": "事業所名と最後の定員つき。CSVで取り出せます"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 8,
+   "title": "Kurage 放課後等デイサービスナビ",
+   "sub": "放課後等デイ・児童発達支援・保育所等訪問・障害児相談 56,258事業所を、住所ひとつで。出典：WAM NET のオープンデータ",
+   "price": "オンプレミス 55,000円（税込）／月額なし・ソース同梱・PHP1ファイル",
+   "url1": "無料で試す  kurage.exbridge.jp/khoudei.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "放課後等デイは\n1.71倍になった",
+  "sub": "同じ期間に3,114か所が消えた／オンプレミス 55,000円（税込）",
+  "badge": "Kurage 放課後等デイサービスナビ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khoudei-8s.mp4"
+ }
+}
