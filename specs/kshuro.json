@@ -1,0 +1,99 @@
+{
+ "id": "kshuro-42s",
+ "name": "Kurage 就労継続支援ナビ 42秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "就労継続支援エーがたの事業所は、全国でよんせんろっぴゃくごじゅうかしょ。国のデータのうえでは、増えています。でも、いちど公表された事業所ばんごうが、消えた数をかぞえると、にせんにじゅうよねん四月の報酬改定のあとで、はっぴゃくはちじゅうきゅうけん。その定員を足すと、いちまんさんぜんよんひゃくごじゅうにんぶんです。消えた理由は公表されていないので、はいし、とは書きません。クラゲ就労継続支援ナビは、住所ひとつで、通える範囲の事業所をきょり順に返します。空き状況も、公表がないので出しません。ピーエイチピー、いちファイルで動きます。オンプレミス、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "就労継続支援",
+   "公表",
+   "5万5000円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kshuro-8s.mp4",
+   "duration": 9,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "就労継続支援A型、2年で889か所が公表データから消えた",
+    "sub": "障害福祉サービス等情報公表システム（WAM NET）のオープンデータを集計",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kshuro.php/",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": ["50%", "22%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "住所を入れるだけ",
+    "sub": "登録もログインも要りません"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "2026年3月末時点の公表データ",
+   "items": [
+    {"value": 30867, "label": "収録している事業所"},
+    {"value": 889, "label": "改定後に消えたA型"},
+    {"value": 13450, "label": "その定員の合計（人分）"}
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kshuro.php/?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E7%91%9E%E7%A9%82%E5%8C%BA%E5%A6%99%E9%9F%B3%E9%80%9A&km=2",
+   "duration": 7,
+   "load_seconds": 25,
+   "zoom_from": 1.06,
+   "zoom_to": 1.18,
+   "origin": ["50%", "34%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "通える範囲を、近い順に",
+    "sub": "定員・営業時間・連絡先つき。空き状況は公表がないので出しません"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kshuro.php/gone",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": ["50%", "30%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "消えた事業所を、都道府県・市区町村ごとに",
+    "sub": "事業所名と最後の定員つき。CSVで取り出せます"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 8,
+   "title": "Kurage 就労継続支援ナビ",
+   "sub": "就労継続支援A型・B型・就労移行・就労定着 30,867事業所を、住所ひとつで。出典：WAM NET のオープンデータ",
+   "price": "オンプレミス 55,000円（税込）／月額なし・ソース同梱・PHP1ファイル",
+   "url1": "無料で試す  kurage.exbridge.jp/kshuro.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "就労継続支援A型は、\n本当に減ったのか",
+  "sub": "消えた889か所を市区町村ごとに／オンプレミス 55,000円（税込）",
+  "badge": "Kurage 就労継続支援ナビ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kshuro-8s.mp4"
+ }
+}
