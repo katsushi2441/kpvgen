@@ -1,0 +1,117 @@
+{
+ "id": "kghome-42s",
+ "name": "Kurage 障害者グループホームナビ 42秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "障害者グループホームは、全国で、いちまんろくせんにじゅうにかしょ。よねんはんで、いってんろくばいに増えました。でも、おなじ期間に、入所施設は、いってんれいさんばいのままです。そして、せんろっぴゃくじゅうはちかしょが、公表データから消えています。消えかたは、法人にかたよっていました。クラゲ障害者グループホームナビは、住所ひとつで、近くの住まいをきょり順に返します。運営法人ごとに、いま何かしょ持っていて、何かしょ消えたかも、並べます。空き状況も、定員も、公表がないので出しません。ピーエイチピー、いちファイルで動きます。オンプレミス、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "障害者グループホーム",
+   "公表",
+   "5万5000円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kghome-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "グループホームは4年半で1.60倍。入所施設は1.03倍のまま",
+    "sub": "障害福祉サービス等情報公表システム（WAM NET）のオープンデータを10時点ぶん集計",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kghome.php/",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "22%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "住所を入れるだけ",
+    "sub": "登録もログインも要りません"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "2026年3月末時点の公表データ",
+   "items": [
+    {
+     "value": 28471,
+     "label": "収録している事業所"
+    },
+    {
+     "value": 16022,
+     "label": "うちグループホーム"
+    },
+    {
+     "value": 1618,
+     "label": "公表データから消えたGH"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kghome.php/?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E7%91%9E%E7%A9%82%E5%8C%BA%E5%A6%99%E9%9F%B3%E9%80%9A&km=3",
+   "duration": 7,
+   "load_seconds": 25,
+   "zoom_from": 1.06,
+   "zoom_to": 1.18,
+   "origin": [
+    "50%",
+    "34%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "近くの住まいを、近い順に",
+    "sub": "運営法人・連絡先つき。空き状況とグループホームの定員は公表がないので出しません"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kghome.php/corps",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "運営法人ごとに、いくつ持って、いくつ消えたか",
+    "sub": "消えた数だけを見ない。いまの数と並べて読む画面にしました"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 9,
+   "title": "Kurage 障害者グループホームナビ",
+   "sub": "グループホーム・短期入所・施設入所支援ほか 28,471事業所を、住所ひとつで。出典：WAM NET のオープンデータ",
+   "price": "オンプレミス 55,000円（税込）／月額なし・ソース同梱・PHP1ファイル",
+   "url1": "無料で試す  kurage.exbridge.jp/kghome.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "グループホームは\n1.60倍になった",
+  "sub": "入所施設は1.03倍のまま／消えた1,618か所は法人に偏っていた",
+  "badge": "Kurage 障害者グループホームナビ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kghome-8s.mp4"
+ }
+}

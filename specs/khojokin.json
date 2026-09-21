@@ -1,0 +1,129 @@
+{
+ "id": "khojokin-pv-30s",
+ "name": "Kurage 補助金ナビ 30秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "申請書類の山を前に、どれが自社で出せるのか分からない。調べている時間もありません。補助金は、さんぜん種類あると言われます。では、あなたの会社が今日出せるのは何件でしょうか。クラゲ補助金ナビは、地域、業種、従業員数、やりたいこと。この四つを選ぶだけ。補助率、上限額、締切、公式ページまで出ます。地域を選べば、地元の公募を先に。データはデジタル庁のジェイグランツ。補助率や締切を、エーアイに書かせない作りです。オンプレミスで、ごまんごせんえん。",
+  "delay": 1.2,
+  "must_hear": [
+   "補助金",
+   "5万5000円"
+  ]
+ },
+ "poster": {
+  "time": 4.0,
+  "main": "3,000種類あっても、\n今日出せるのは何件か。",
+  "sub": "地域・業種・人数・やりたいことで絞る／オンプレミス 55,000円（税込）",
+  "badge": "Kurage 補助金ナビ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khojo-a-8s.mp4"
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khojo-a-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "「うちの会社が出せる補助金は、どれか」",
+    "sub": "3,000種類あると言われても、探す時間がない",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/khojokin.php/",
+   "duration": 5,
+   "load_seconds": 12,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "26%"
+   ],
+   "telop": {
+    "main": "選ぶのは、4つだけ",
+    "sub": "地域・業種・従業員数・やりたいこと",
+    "at": 0.5
+   }
+  },
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khojo-b-8s.mp4",
+   "duration": 6,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "条件を4つ選ぶだけ",
+    "sub": "地域・業種・従業員数・やりたいこと",
+    "at": 0.5
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/khojokin.php/?area=%E6%84%9B%E7%9F%A5%E7%9C%8C&industry=%E8%A3%BD%E9%80%A0%E6%A5%AD&employees=20%E5%90%8D%E4%BB%A5%E4%B8%8B",
+   "duration": 7,
+   "load_seconds": 20,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.06,
+   "zoom_to": 1.18,
+   "origin": [
+    "50%",
+    "52%"
+   ],
+   "telop": {
+    "main": "締切が近い順に、補助率と上限額つき",
+    "sub": "地域を選ぶと、地元の公募が全国公募より先に出る"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 4,
+   "title": "収録（デジタル庁 Jグランツの公開APIから日次で取り込み）",
+   "items": [
+    {
+     "value": 352,
+     "label": "受付中の補助金"
+    },
+    {
+     "value": 47,
+     "label": "都道府県"
+    },
+    {
+     "value": 1,
+     "label": "日ごとに更新"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/khojokin.php/about",
+   "duration": 5,
+   "load_seconds": 15,
+   "max_white_ratio": 0.95,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "40%"
+   ],
+   "telop": {
+    "main": "補助率・上限額・締切はAIに書かせない",
+    "sub": "取り込んだ値をそのまま。公募要領の本文は持たず公式へリンク"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 8,
+   "title": "Kurage 補助金ナビ",
+   "sub": "会社の条件から、いま出せる補助金を。出典：Jグランツ（デジタル庁）",
+   "price": "オンプレミス 55,000円（税込）／月額なし・ソース同梱",
+   "url1": "無料で試す  kurage.exbridge.jp/khojokin.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ]
+}
