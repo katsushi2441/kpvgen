@@ -1,0 +1,117 @@
+{
+ "id": "kkaigo-46s",
+ "name": "Kurage 訪問介護・ケアマネナビ 46秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "訪問介護とケアマネ事業所は、全国で、ななまんさんぜんじぎょうしょ。にせんにじゅうよねんじゅうにがつまつから、いちねんはんで、訪問介護はさんぜんにひゃくよんじゅうにかしょ、ケアマネ事業所はさんぜんひゃくよんじゅうろっかしょが、公表データから消えました。差し引きの数字では、この入れ替わりは見えません。訪問介護がいっかしょも無い市区町村は、はちじゅうはち。クラゲ訪問介護ケアマネナビは、住所ひとつで、近くの事業所をきょり順に返します。市区町村ごと、法人ごとに、いま何かしょあって、何かしょ消えたかを並べます。空き状況は、公表がないので出しません。ピーエイチピー、いちファイルで動きます。オンプレミス、ごまんごせんえん。",
+  "delay": 1.5,
+  "must_hear": [
+   "訪問介護",
+   "公表",
+   "5万5000円"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kkaigo-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "訪問介護3,242か所・ケアマネ3,146か所が、1年半で消えた",
+    "sub": "介護サービス情報公表システム（厚生労働省）のオープンデータを2時点で突き合わせ",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kkaigo.php/",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "22%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "住所を入れるだけ",
+    "sub": "登録もログインも要りません"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "2026年6月末時点の公表データ",
+   "items": [
+    {
+     "value": 73098,
+     "label": "収録している事業所"
+    },
+    {
+     "value": 3242,
+     "label": "消えた訪問介護"
+    },
+    {
+     "value": 88,
+     "label": "訪問介護が無い市区町村"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kkaigo.php/?q=%E5%8D%83%E8%91%89%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8D%83%E8%91%89%E6%B8%AF1&km=3",
+   "duration": 8,
+   "load_seconds": 25,
+   "zoom_from": 1.06,
+   "zoom_to": 1.18,
+   "origin": [
+    "50%",
+    "34%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "近くの事業所を、近い順に",
+    "sub": "運営法人・連絡先つき。空き状況は公表がないので出しません"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kkaigo.php/gone",
+   "duration": 7,
+   "load_seconds": 15,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "消えた事業所を、都道府県・法人ごとに",
+    "sub": "消えた数だけを見ない。いまの数と並べて読む画面にしました"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 11,
+   "title": "Kurage 訪問介護・ケアマネナビ",
+   "sub": "訪問介護・居宅介護支援・定期巡回・夜間対応型 73,098事業所を、住所ひとつで。出典：厚生労働省のオープンデータ",
+   "price": "オンプレミス 55,000円（税込）／月額なし・ソース同梱・PHP1ファイル",
+   "url1": "無料で試す  kurage.exbridge.jp/kkaigo.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "ケアマネ事業所は\n1年半で3,146か所消えた",
+  "sub": "訪問介護も3,242か所／オンプレミス 55,000円（税込）",
+  "badge": "Kurage 訪問介護・ケアマネナビ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kkaigo-8s.mp4"
+ }
+}
