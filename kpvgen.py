@@ -255,9 +255,12 @@ def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -
                 dst = f"assets/end{i}.webp"
                 shutil.copy(e["image"], proj / dst)
                 img = f'<img src="{dst}">'
+            # 価格は入れない方針（2026-09-22）。spec に price があるときだけ出す
+            price_html = f'<div class="price">{esc(e["price"])}</div>' if e.get("price") else ''
             inner = (f'<div class="endcard"><h1>{esc(e.get("title"))}</h1>'
                      f'<div class="sub">{esc(e.get("sub"))}</div>'
-                     f'<div class="price">{esc(e.get("price"))}</div>'
+                     f'{price_html}'
+
                      f'<div class="url">{esc(e.get("url1"))}</div>'
                      f'<div class="url2">{esc(e.get("url2"))}</div>'
                      + (f'<div class="credit">{esc(e.get("credit"))}</div>' if e.get("credit") else "")
