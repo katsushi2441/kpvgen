@@ -1,0 +1,115 @@
+{
+ "id": "kshuisho-46s",
+ "name": "Kurage 質問主意書アシスト 46秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "質問主意書は、国会議員が、内閣に文書で質問する制度です。衆参のサイトに全文が公開されていますが、本文の中は検索できません。クラゲ質問主意書アシストは、質問本文と政府答弁書を、ことばで引きます。同じ論点で、過去に誰が何を聞き、政府が何と答えたかを、いち画面に並べます。おこたえすることは困難、という定型句を数えます。文章は作りません。要約も論評もしません。ピーエイチピー、いちファイルで動きます。",
+  "delay": 1.5,
+  "must_hear": [
+   "答弁書",
+   "国会議員"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kshuisho-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "質問主意書を書く前に、同じ論点の答弁を並べる",
+    "sub": "衆議院・参議院の質問主意書と政府答弁書を、本文の中までことばで引く",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kshuisho.php/",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "22%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "ことばを入れるだけ",
+    "sub": "件名だけでなく、質問本文と答弁本文の中まで"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "第212〜221回国会の質問主意書",
+   "items": [
+    {
+     "value": 2167,
+     "label": "収録している質問主意書"
+    },
+    {
+     "value": 2103,
+     "label": "政府答弁書"
+    },
+    {
+     "value": 1116,
+     "label": "「お答えすることは困難」と答えられた"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kshuisho.php/assist?q=%E9%81%BA%E6%97%8F%E5%B9%B4%E9%87%91%20%E9%A4%8A%E8%82%B2%E8%B2%BB",
+   "duration": 8,
+   "load_seconds": 20,
+   "zoom_from": 1.06,
+   "zoom_to": 1.18,
+   "origin": [
+    "50%",
+    "34%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "政府はこう答えている",
+    "sub": "答弁書の段落を原文のまま。答えていない型が返った質問も並ぶ"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kshuisho.php/q/shu-212-1",
+   "duration": 7,
+   "load_seconds": 15,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "40%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "質問と答弁を左右に",
+    "sub": "提出日・転送日・受領日・答弁の項目数。原文へのリンクつき"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 11,
+   "title": "Kurage 質問主意書アシスト",
+   "sub": "衆議院・参議院の質問主意書と政府答弁書を、ことばで。文章は作りません。出典：衆議院・参議院の公開ページ",
+   "url1": "無料で試す  kurage.exbridge.jp/kshuisho.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "質問主意書を書く前に、\n同じ論点の答弁を並べる",
+  "sub": "衆参の質問主意書と政府答弁書を、本文までことばで",
+  "badge": "Kurage 質問主意書アシスト",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kshuisho-8s.mp4"
+ }
+}
