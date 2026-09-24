@@ -1,0 +1,94 @@
+{
+ "id": "kacnavi-48s",
+ "name": "Kurage AfterCare Navi 48秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "みうちが亡くなったあと、なにを、いつまでにするか。手続きは、ぜんぶで、よんじゅうはち件あります。ただし、ぜんぶが必要な人はいません。故人の状況をえらぶと、あてはまるものだけが、期限の近い順にのこります。期限は、すべて法令の条文でうらを取りました。死亡届のなのかは、亡くなった日からではなく、死亡の事実をしった日から。こせきほう、はちじゅうろく条、いち項です。年金の死亡届は、ださなくてよい場合があります。ぜんこく、いっせんきゅうひゃくじゅうに、しくちょうそんの窓口ページつき。入力した内容は、どこにも送りません。",
+  "delay": 1.5,
+  "must_hear": ["手続き", "死亡届"]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kacnavi-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "身内が亡くなったあと、何を、いつまでに",
+    "sub": "手続きは48件。ただし、全部が必要な人はいません",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kacnavi.php/",
+   "duration": 7,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": ["50%", "20%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "48件を、期限の順に",
+    "sub": "赤は過ぎると選べなくなるもの。橙は、もらえるお金が消えるもの"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kacnavi.php/?c=nenkin,mynumber_nenkin,fudosan,setainushi,nokoru2,kokuho,kaigo",
+   "duration": 8,
+   "load_seconds": 12,
+   "zoom_from": 1.05,
+   "zoom_to": 1.16,
+   "origin": ["50%", "30%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "状況をえらぶと、要らないものが消える",
+    "sub": "「出さなくてよい場合があります」も出る。厚生年金保険法98条4項ただし書"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kacnavi.php/p/shibo-todoke",
+   "duration": 8,
+   "load_seconds": 12,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": ["50%", "42%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "期限に、条文が付いている",
+    "sub": "「死亡の事実を知つた日から七日以内」戸籍法86条1項。e-Gov法令検索へのリンクつき"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "収録",
+   "items": [
+    {"value": 48, "label": "死亡後の手続き"},
+    {"value": 34, "label": "公開前に検算した条文の引用"},
+    {"value": 1912, "label": "市区町村の窓口ページ"}
+   ]
+  },
+  {
+   "type": "endcard",
+   "duration": 11,
+   "title": "Kurage AfterCare Navi",
+   "sub": "身内が亡くなったあとの手続きナビ。期限は法令の条文で裏を取っています。入力した内容はどこにも送りません。出典：e-Gov法令検索・総務省",
+   "url1": "無料で試す  kurage.exbridge.jp/kacnavi.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "身内が亡くなったあと、\n何を、いつまでに。",
+  "sub": "手続き48件を、故人の状況で絞る",
+  "badge": "Kurage AfterCare Navi",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kacnavi-8s.mp4"
+ }
+}
