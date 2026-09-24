@@ -1,0 +1,115 @@
+{
+ "id": "kminpaku-44s",
+ "name": "Kurage 民泊できる場所チェック 44秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "民泊には、みっつの制度があります。住宅宿泊事業法、特区民泊、旅館業法の簡易宿所。窓口も条件も別々です。さらに、ろくじゅうさんの自治体が、条例で区域と期間を上乗せで制限しています。クラゲ民泊できる場所チェックは、住所を入れるだけで、その場所の用途地域と、その自治体の条例を、いち画面に並べます。条例の文は、原文のまま出します。要約も、解釈もしません。できる、できないを断定もしません。調べる前の、下ごしらえです。ピーエイチピー、いちファイルで動きます。",
+  "delay": 1.5,
+  "must_hear": [
+   "用途地域",
+   "条例"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kminpaku-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "この物件で、民泊はできるのか",
+    "sub": "用途地域と、その自治体の上乗せ条例を、住所ひとつで",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kminpaku.php/",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "24%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "住所を入れるだけ",
+    "sub": "全国47都道府県の用途地域を収録"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "収録しているもの",
+   "items": [
+    {
+     "value": 102159,
+     "label": "用途地域の面"
+    },
+    {
+     "value": 1215,
+     "label": "市区町村"
+    },
+    {
+     "value": 63,
+     "label": "上乗せ条例のある自治体"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kminpaku.php/check?q=%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9C%AC%E7%94%BA1-1-1",
+   "duration": 8,
+   "load_seconds": 20,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "用途地域と建蔽率・容積率",
+    "sub": "住居専用系なら、制限が置かれやすい区分だと添える"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kminpaku.php/jorei",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.04,
+   "zoom_to": 1.14,
+   "origin": [
+    "50%",
+    "34%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "条例は原文のまま",
+    "sub": "区域と期間を、要約も解釈もせずに出す"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 10,
+   "title": "Kurage 民泊できる場所チェック",
+   "sub": "住所から用途地域と民泊の上乗せ条例を。断定はしません。出典：国土交通省 都市局／観光庁／地方自治研究機構",
+   "url1": "無料で試す  kurage.exbridge.jp/kminpaku.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "この物件で、\n民泊はできるのか",
+  "sub": "用途地域と上乗せ条例を、住所ひとつで",
+  "badge": "Kurage 民泊できる場所チェック",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kminpaku-8s.mp4"
+ }
+}

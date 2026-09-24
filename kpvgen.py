@@ -226,7 +226,11 @@ def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -
             else:
                 inner = (f'<video class="bg" src="{dst}" data-start="{t0:.2f}" '
                          f'data-duration="{dur:.2f}" muted playsinline preload="auto"></video>')
-            if sc.get("audio_volume"):
+            # **H3 の実写クリップには生成音声が入っている。** 内容は指定していないので
+            # 中国語のこともある（2026-09-25 に公開済みの reseller PV で発覚）。
+            # 既定では使わない。どうしても環境音を混ぜたいときだけ
+            # keep_clip_audio: true を明示する。
+            if sc.get("audio_volume") and sc.get("keep_clip_audio"):
                 amp3 = f"assets/clip{i}.mp3"
                 # hyperframesはdata-volumeを適用しない(0.4.44実測)。音量はmp3に焼き込む。
                 run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vn",
@@ -283,6 +287,19 @@ def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -
 
     audio_tag = ""
     if narration:
+        # **ナレーションが尺に収まっているかを、ここで止める。**
+        # reseller PV は 1.5 + 47.18 = 48.68秒で、総尺48.0秒を超えて最後が切れたまま公開した
+        # （2026-09-25）。data-duration で頭打ちにされるので、出力を聞くまで分からない。
+        narr_dur = float(subprocess.check_output(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+             "-of", "csv=p=0", str(narration)]).decode().strip())
+        if narr_delay + narr_dur > total - 0.2:
+            raise SystemExit(
+                f"!! ナレーションが尺に入らない: 開始{narr_delay:.1f}秒＋{narr_dur:.1f}秒"
+                f"＝{narr_delay + narr_dur:.1f}秒 > 総尺{total:.1f}秒。\n"
+                f"   reading を短くするか、シーンの duration を足してください"
+                f"（あと {narr_delay + narr_dur - total + 0.2:.1f}秒ぶん）。")
+        print(f"  narration 収まり OK {narr_delay + narr_dur:.1f}/{total:.1f}秒")
         shutil.copy(narration, proj / "assets/narration.mp3")
         audio_tag = (f'<audio src="assets/narration.mp3" data-start="{narr_delay:.2f}" '
                      f'data-duration="{total - narr_delay:.2f}" data-track-index="5" '

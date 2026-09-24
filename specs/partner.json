@@ -1,0 +1,93 @@
+{
+ "id": "partner-48s",
+ "name": "エクスブリッジ パートナー募集 48秒PV（reseller.html と sales-partner.html で共用）",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "しょうかいするだけ。パートナーを募集しています。とくべつな営業スキルは要りません。AIかつようにきょうみを持っていそうな、知人や取引先を教えていただくだけです。ぎじゅつてきな説明も、デモも、見積もりも、すべて弊社が対応します。ごどうせきも要りません。とうろく無料。ノルマなし。仕入れも在庫も要りません。おきゃくさまからのご入金を確認したのち、じゅうえいぎょうびいないに、ほうしゅうをお支払いします。しょうかいするのは、AIで作るぎょうむシステム。もうしこみは、それぞれのページから。",
+  "delay": 1.5,
+  "must_hear": ["紹介", "パートナー"]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-salespartner-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "telop": {
+    "main": "紹介するだけ。",
+    "sub": "パートナー募集 — 登録無料・ノルマなし・仕入れ不要",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/reseller.html",
+   "duration": 8,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": ["50%", "18%"],
+   "max_white_ratio": 0.96,
+   "telop": {
+    "main": "Kurage 再販パートナー（全国）",
+    "sub": "取次型＝つなぐだけ／販売代理型＝ご自身で売る。どちらでも手数料は変わりません"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://exbridge.jp/sales-partner.html",
+   "duration": 8,
+   "load_seconds": 12,
+   "zoom_from": 1.03,
+   "zoom_to": 1.14,
+   "origin": ["50%", "20%"],
+   "max_white_ratio": 0.96,
+   "telop": {
+    "main": "営業パートナー（名古屋市・愛知県）",
+    "sub": "紹介先が名古屋市・愛知県の企業であることが条件。紹介者の所在地は問いません"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/vibe-prototype.html",
+   "duration": 7,
+   "load_seconds": 12,
+   "zoom_from": 1.04,
+   "zoom_to": 1.15,
+   "origin": ["50%", "26%"],
+   "max_white_ratio": 0.96,
+   "telop": {
+    "main": "紹介するのは、動くシステム",
+    "sub": "設計書から最短1営業日でプロトタイプ。触ってから発注いただけます"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "参加の条件",
+   "items": [
+    {"value": 0, "label": "登録の費用"},
+    {"value": 0, "label": "ノルマ・同席・技術の知識"},
+    {"value": 10, "label": "入金確認から支払いまでの営業日"}
+   ]
+  },
+  {
+   "type": "endcard",
+   "duration": 11,
+   "title": "パートナー募集",
+   "sub": "商談・デモ・見積もりはすべて弊社が対応します。同席は不要です。収入を保証するものではありません。",
+   "url1": "全国  kurage.exbridge.jp/reseller.html",
+   "url2": "名古屋・愛知  exbridge.jp/sales-partner.html",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "紹介するだけ。",
+  "sub": "パートナー募集｜登録無料・ノルマなし・仕入れ不要",
+  "badge": "株式会社エクスブリッジ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-salespartner-8s.mp4"
+ }
+}
