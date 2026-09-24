@@ -1,0 +1,94 @@
+{
+ "id": "knintei-48s",
+ "name": "Kurage 要介護認定ナビ 48秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "ようかいごにんていの調査で、なにを聞かれるか。ねがえりはできますか、と聞かれたとき、ベッド柵につかまってやっと向きを変えている人が、できます、と答えることがあります。この項目のせんたくしは、みっつに分かれています。つかまらないでできる。なにかにつかまればできる。できない。クラゲ、ようかいごにんていナビは、にんていちょうさの、ごじゅうごもんを、せんたくしと、ていぎと、せんたくきじゅんつきで出します。文言は、こうせいろうどうしょうのテキストのまま。いいかえていません。ようかいごどは、はんていしません。くぶんの、さかいめと、こんきょのじょうぶんまでを出します。ぜんこく、いっせんきゅうひゃくじゅうに、しくちょうそんの窓口ページつき。",
+  "delay": 1.5,
+  "must_hear": ["調査", "選択肢"]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-knintei-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "要介護認定の調査で、何を聞かれるか",
+    "sub": "認定調査の55問を、選択肢と定義と選択基準つきで",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/knintei.php/",
+   "duration": 7,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": ["50%", "20%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "55問を、群ごとに",
+    "sub": "身体機能13・生活機能12・認知機能9・精神行動15・社会適応6"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/knintei.php/item/1-3",
+   "duration": 9,
+   "load_seconds": 12,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": ["50%", "32%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "選択肢の文言は、言い換えない",
+    "sub": "「つかまらないでできる」と「何かにつかまればできる」の差が、そのまま結果に効く"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/knintei.php/kubun",
+   "duration": 8,
+   "load_seconds": 12,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": ["50%", "40%"],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "要介護度は判定しません",
+    "sub": "「厚生労働大臣の定める方法により推計される時間」。その係数は公開されていない"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "収録",
+   "items": [
+    {"value": 55, "label": "認定調査の設問"},
+    {"value": 181, "label": "選択肢"},
+    {"value": 1912, "label": "市区町村の窓口ページ"}
+   ]
+  },
+  {
+   "type": "endcard",
+   "duration": 10,
+   "title": "Kurage 要介護認定ナビ",
+   "sub": "認定調査で何を聞かれるか。要介護度は判定しません。出典：厚生労働省 認定調査員テキスト／e-Gov法令検索／総務省",
+   "url1": "無料で試す  kurage.exbridge.jp/knintei.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "要介護認定の調査で、\n何を聞かれるか。",
+  "sub": "認定調査55問を、選択肢と定義つきで",
+  "badge": "Kurage 要介護認定ナビ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-knintei-8s.mp4"
+ }
+}
