@@ -1,0 +1,116 @@
+{
+ "id": "klchatbot-46s",
+ "name": "AIチャットボット 46秒PV（自社仕様に自由に変えられる・kappstore 224e141f77bd07a8）",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "しゃないの文書を読ませて答える、えーあいチャットボットです。おんぷれみすで動くので、文書をそとのえーあいに送りません。ほんたいはPHP1ファイル。れんたるさーばーにえふてぃーぴーで上げるだけで動きます。そしてここが本題です。そーすこーどがまるごと付いていて、えむあいてぃーらいせんす。じぶんで自由に書き換えられます。じっさいのれいとして、すうまんファイルのぴーでぃーえふを、ぜんぶんけんさくおーえすえす、ナマズで索引し、当たった内容だけを根拠に答えるかたちに変えました。さがす、が、きく、に変わります。どこまで変えられるか、まずはでもを触ってみてください。",
+  "delay": 1.4,
+  "must_hear": [
+   "オンプレミス",
+   "自由"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-klchatbot-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "telop": {
+    "main": "自社仕様に、自由に変えられる。",
+    "sub": "ソースコード同梱・MITライセンスのAIチャットボット",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://proto.exbridge.jp/klchatbot/klchatbot.php",
+   "duration": 8,
+   "load_seconds": 14,
+   "zoom_from": 1.06,
+   "zoom_to": 1.2,
+   "origin": [
+    "50%",
+    "10%"
+   ],
+   "max_white_ratio": 0.97,
+   "telop": {
+    "main": "社内の文書を読ませて、答えさせる",
+    "sub": "問い合わせ対応・社内ヘルプデスクに。文書を外部のAIに送りません"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kappstore.exbridge.jp/app.php?id=224e141f77bd07a8",
+   "duration": 8,
+   "load_seconds": 14,
+   "zoom_from": 1.0,
+   "zoom_to": 1.06,
+   "origin": [
+    "50%",
+    "50%"
+   ],
+   "max_white_ratio": 0.97,
+   "telop": {
+    "main": "オンプレミスで、自社サーバーに置く",
+    "sub": "PHPが動くレンタルサーバーにFTPで上げるだけ。DBサーバーもComposerも要りません"
+   },
+   "scroll_to": "#about"
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/vibe-customize.html",
+   "scroll_to": "#cases",
+   "duration": 8,
+   "load_seconds": 14,
+   "zoom_from": 1.0,
+   "zoom_to": 1.06,
+   "origin": [
+    "50%",
+    "50%"
+   ],
+   "max_white_ratio": 0.97,
+   "telop": {
+    "main": "全文検索OSSの結果から答えるように変えた例",
+    "sub": "科学系の技術専門雑誌 数年分・数万ファイルのPDFを Namazu で索引し、当たった内容だけを根拠に答えます"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "変えやすさの中身",
+   "items": [
+    {
+     "value": 1,
+     "label": "本体のファイル数（PHP）"
+    },
+    {
+     "value": 460,
+     "label": "本体の行数"
+    },
+    {
+     "value": 0,
+     "label": "必要なDBサーバー・Composer"
+    }
+   ]
+  },
+  {
+   "type": "endcard",
+   "duration": 8,
+   "title": "AIチャットボットをオンプレミスで",
+   "sub": "ソースコード同梱・MITライセンス。改変も商用利用も自由です。まずはデモを触ってみてください。",
+   "url1": "デモ  proto.exbridge.jp/klchatbot/",
+   "url2": "商品  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "自社仕様に、自由に変えられる。",
+  "sub": "社内の文書を読ませて答えるAIチャットボット｜オンプレミス",
+  "badge": "Kurage App Store",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-klchatbot-8s.mp4"
+ }
+}
