@@ -1,0 +1,116 @@
+{
+ "id": "llmo-46s",
+ "name": "LLMO・AI検索対策 46秒PV（exbridge.jp/llmo.html）",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "おきゃくさまは、けんさくする前に、エーアイに、おすすめは、と聞くようになりました。そのとき、エーアイが読むのは、人が見る画面ではなく、サイトが機械に返している中身です。エルエルエムオーたいさくとは、そこを整えることです。エーアイにぶろっくされている、という思い込みの多くは、はかり方の問題です。がくしゅうよう と いんようよう の くろーらーは別物で、まとめて拒否すると、エーアイけんさくにも出なくなります。ゆーざーえーじぇんとを変えて実際にはかり、なおす順番までお出しします。しんだんは無料です。",
+  "delay": 1.4,
+  "must_hear": [
+   "対策",
+   "無料"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-llmo-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "telop": {
+    "main": "AIは、御社をすすめてくれますか？",
+    "sub": "お客さまは検索する前に、AIに「おすすめは？」と聞くようになりました",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://exbridge.jp/llmo.html",
+   "duration": 8,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "16%"
+   ],
+   "max_white_ratio": 0.96,
+   "telop": {
+    "main": "LLMOとは、AIに引用してもらうための対策",
+    "sub": "SEOは「順位」、LLMOは「引用されるか」。土台は共通しています"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://exbridge.jp/llmo.html",
+   "duration": 8,
+   "load_seconds": 12,
+   "zoom_from": 1.0,
+   "zoom_to": 1.06,
+   "origin": [
+    "50%",
+    "50%"
+   ],
+   "max_white_ratio": 0.96,
+   "telop": {
+    "main": "「ブロックされている」の多くは、測り方の問題",
+    "sub": "調べる道具のほうが弾かれている場合と、本当にUser-Agentで拒否している場合があります"
+   },
+   "scroll_to": "#gokai"
+  },
+  {
+   "type": "capture",
+   "url": "https://exbridge.jp/llmo.html",
+   "duration": 8,
+   "load_seconds": 12,
+   "zoom_from": 1.0,
+   "zoom_to": 1.06,
+   "origin": [
+    "50%",
+    "50%"
+   ],
+   "max_white_ratio": 0.96,
+   "telop": {
+    "main": "学習用と引用用は、別のクローラー",
+    "sub": "まとめて拒否すると「学習は防げたが、AI検索にも出なくなった」が起きます"
+   },
+   "scroll_to": "#crawler"
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "実測して、直す順番まで",
+   "items": [
+    {
+     "value": 10,
+     "label": "到達を確かめるAIクローラー"
+    },
+    {
+     "value": 6,
+     "label": "診断で見る領域"
+    },
+    {
+     "value": 1,
+     "label": "送っていただくもの（URL）"
+    }
+   ]
+  },
+  {
+   "type": "endcard",
+   "duration": 8,
+   "title": "LLMO・AI検索対策",
+   "sub": "公開URLだけで診断します。ログイン領域や管理画面にはアクセスしません。",
+   "url1": "exbridge.jp/llmo.html",
+   "url2": "株式会社エクスブリッジ（名古屋市瑞穂区）",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "AIは、御社をすすめてくれますか？",
+  "sub": "LLMOとは、AIに引用してもらうための対策です",
+  "badge": "株式会社エクスブリッジ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-llmo-8s.mp4"
+ }
+}

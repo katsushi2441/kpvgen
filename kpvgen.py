@@ -65,8 +65,95 @@ def white_ratio(png: Path) -> float:
     return sum(1 for c in px if c[0] > 245 and c[1] > 245 and c[2] > 245) / len(px)
 
 
+def capture_cdp(sc: dict, out: Path, size: str, budget_ms: int) -> bool:
+    """CDP でスクロールしてから撮る。
+
+    `--screenshot` はページ先頭のビューポートしか撮らない。URL に #anchor を付けても
+    スクロールしないまま撮れる（2026-09-25 llmo.html の #gokai / #crawler で実測）。
+    spec に scroll_to（CSSセレクタ）か scroll_y（画素）があるときだけこちらを使う。
+    使い捨てプロファイルで起動する。**常用の chrome-profile は触らない。**
+    """
+    import base64
+    import shutil
+    import tempfile
+    import time
+    import urllib.request
+
+    import websocket
+
+    w, h = size.split("x")
+    prof = tempfile.mkdtemp(prefix="kpvgen-cap-")
+    proc = subprocess.Popen(
+        [CHROME, "--headless=new", "--disable-gpu", "--no-sandbox", "--hide-scrollbars",
+         f"--window-size={w},{h}", f"--user-data-dir={prof}", "--remote-debugging-port=0",
+         "about:blank"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        port = None
+        for _ in range(100):
+            f = Path(prof) / "DevToolsActivePort"
+            if f.exists():
+                port = f.read_text().splitlines()[0].strip()
+                break
+            time.sleep(0.2)
+        if not port:
+            return False
+        tabs = json.load(urllib.request.urlopen(f"http://127.0.0.1:{port}/json", timeout=10))
+        page = next(t for t in tabs if t.get("type") == "page")
+        ws = websocket.create_connection(page["webSocketDebuggerUrl"], timeout=180,
+                                         suppress_origin=True)
+        n = [0]
+
+        def cmd(method, params=None):
+            n[0] += 1
+            i = n[0]
+            ws.send(json.dumps({"id": i, "method": method, "params": params or {}}))
+            while True:
+                r = json.loads(ws.recv())
+                if r.get("id") == i:
+                    return r.get("result", {})
+
+        cmd("Page.navigate", {"url": sc["url"]})
+        time.sleep(budget_ms / 1000)
+        if sc.get("scroll_to"):
+            cmd("Runtime.evaluate", {"expression":
+                f"(document.querySelector({json.dumps(sc['scroll_to'])})||{{}})"
+                f".scrollIntoView&&document.querySelector({json.dumps(sc['scroll_to'])})"
+                f".scrollIntoView({{block:'start'}})"})
+        elif sc.get("scroll_y"):
+            cmd("Runtime.evaluate", {"expression": f"window.scrollTo(0,{int(sc['scroll_y'])})"})
+        time.sleep(1.5)
+        shot = cmd("Page.captureScreenshot", {"format": "png"})
+        if not shot.get("data"):
+            return False
+        out.write_bytes(base64.b64decode(shot["data"]))
+        ws.close()
+        return True
+    except Exception as e:
+        print(f"  capture CDP 失敗（--screenshot に戻します）: {type(e).__name__} {e}")
+        return False
+    finally:
+        proc.terminate()
+        try:
+            proc.wait(timeout=10)
+        except Exception:
+            proc.kill()
+        shutil.rmtree(prof, ignore_errors=True)
+
+
 def capture_scene(sc: dict, out: Path, size: str) -> None:
     budget = int(sc.get("load_seconds", 30)) * 1000
+    if sc.get("scroll_to") or sc.get("scroll_y"):
+        for attempt in (1, 2):
+            if capture_cdp(sc, out, size, budget) and out.exists() and out.stat().st_size > 10000:
+                ratio = white_ratio(out)
+                limit = float(sc.get("max_white_ratio", 0.90))
+                if ratio <= limit:
+                    where = sc.get("scroll_to") or f"y={sc.get('scroll_y')}"
+                    print(f"  capture OK {out.name} (白率{ratio:.0%}・{where} までスクロール)")
+                    return
+                print(f"  白率{ratio:.0%} > {limit:.0%} — 読み込み待ちを倍にして再試行")
+                budget *= 2
+        die(f"スクロール指定のキャプチャに失敗: {sc['url']}")
     for attempt in (1, 2):
         r = run([CHROME, "--headless=new", "--disable-gpu", "--no-sandbox",
                  "--hide-scrollbars", f"--window-size={size.replace('x', ',')}",
@@ -148,7 +235,7 @@ TELOP_CSS = """
 STATS_CSS = """
 .stats { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
   background:#fffefb; }
-.stats-grid { display:grid; grid-template-columns:repeat(2, 400px); gap:26px; }
+.stats-grid { display:grid; grid-template-columns:repeat(2, 400px); gap:26px; justify-content:center; }
 .stat { border:4px solid #191f27; background:#fff; padding:26px 30px; }
 .stat b { display:block; font-family:'JetBrains Mono',monospace; font-size:64px; font-weight:700;
   color:#151a21; letter-spacing:-0.03em; font-variant-numeric:tabular-nums; }
@@ -249,7 +336,10 @@ def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -
                     f"tl.to(o{i}_{j},{{v:{st['value']},duration:{min(dur-0.6,1.6):.2f},"
                     f"ease:'power2.out',onUpdate:()=>{{el{i}_{j}.textContent=Math.round(o{i}_{j}.v).toLocaleString('ja-JP')}}}},{t0+0.35:.2f});")
             head = f'<div class="stats-head">{esc(sc.get("title"))}</div>' if sc.get("title") else ""
-            inner = f'<div class="stats">{head}<div class="stats-grid">{"".join(cards)}</div></div>'
+            cols = len(sc["items"]) if len(sc["items"]) <= 3 else 2
+            inner = (f'<div class="stats">{head}'
+                     f'<div class="stats-grid" style="grid-template-columns:repeat({cols},400px)">'
+                     f'{"".join(cards)}</div></div>')
         elif kind == "endcard":
             gsap.append(f"tl.fromTo('#scene{i} .price',{{scale:0.6,opacity:0}},"
                         f"{{scale:1,opacity:1,duration:0.45,ease:'back.out(2)'}},{t0+0.15:.2f});")
