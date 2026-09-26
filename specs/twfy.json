@@ -1,0 +1,134 @@
+{
+ "id": "twfy-53s",
+ "name": "国会答弁検索デモ（TheyWorkForYou日本語版）53秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "国会の答弁は、こっかいとしょかんが、エーピーアイで公開しています。でも、ことばで引く画面がありません。えいこくには、ゼイワークフォーユーという、こっかい議事録サイトが、にじゅうねんあります。これを、日本のこっかい会議録で動かしました。すのままでは、日本語がいっけんも引けません。ぜんぶん検索の、ザピアンが、いちぶんをまるごと、いちごとして、さくいんするからです。さくいんがわと、けんさくがわの、りょうほうを直しました。ゆうびん番号を入れると、しょうせんきょくと、議員がでます。政令市は、区まで見て、ひとつに絞ります。さんぎいんの本会議で、だれが賛成し、だれが反対したかも、見られます。",
+  "delay": 1.5,
+  "must_hear": [
+   "国会",
+   "日本語",
+   "賛成"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-twfy-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "国会の答弁を、言葉で検索する",
+    "sub": "英国で20年動く TheyWorkForYou を、国会会議録APIで日本語化した",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://proto.exbridge.jp/twfy.php",
+   "duration": 6,
+   "load_seconds": 12,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "24%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "言葉を1つ入れるだけ",
+    "sub": "ログイン不要。発言者名と会派つきで返る"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://proto.exbridge.jp/twfy.php?q=%E6%B2%96%E7%B8%84",
+   "duration": 7,
+   "load_seconds": 12,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "34%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "「沖縄」で50件",
+    "sub": "素のままでは0件だった。Xapian のCJK索引を索引側と検索側の両方で直した"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "2026年の国会を収録",
+   "items": [
+    {
+     "value": 25,
+     "label": "会議（2026年6月）"
+    },
+    {
+     "value": 1395,
+     "label": "発言"
+    },
+    {
+     "value": 120,
+     "label": "参議院の本会議採決"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://proto.exbridge.jp/twfy.php?addr=467-0853",
+   "duration": 8,
+   "load_seconds": 12,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "36%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "郵便番号から小選挙区と議員",
+    "sub": "政令市は区まで見て1つに絞る。名古屋市瑞穂区なら愛知4区"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://proto.exbridge.jp/twfy.php?vote=221-0724-v001",
+   "duration": 7,
+   "load_seconds": 12,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "参議院で誰が賛成・反対したか",
+    "sub": "本会議の押しボタン投票を議員別に。衆議院は起立採決で記録が残らない"
+   },
+   "scroll_to": "#vote"
+  },
+  {
+   "type": "endcard",
+   "duration": 11,
+   "title": "国会の答弁を、言葉で検索する",
+   "sub": "TheyWorkForYou 日本語版のデモ。出典：国会会議録検索システム（国立国会図書館）・参議院 本会議投票結果・日本郵便 郵便番号データ",
+   "url1": "触って試す  proto.exbridge.jp/twfy.php",
+   "url2": "導入キット  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "国会の答弁を、\n言葉で検索する",
+  "sub": "TheyWorkForYou を国会会議録APIで日本語化した",
+  "badge": "TheyWorkForYou 日本語版デモ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-twfy-8s.mp4"
+ }
+}
