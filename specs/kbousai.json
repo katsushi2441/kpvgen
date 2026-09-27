@@ -1,0 +1,117 @@
+{
+ "id": "kbousai-pv-46s",
+ "name": "Kurage 防災AIチャット PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "台風の夜、うちは逃げた方がいいのか。答えの材料は、ハザードマップ、警報、キキクル、台風情報と、ばらばらです。クラゲ ぼうさいエーアイチャットは、住所か現在地で聞くだけ。台風は直撃するか、川はあふれそうか、津波は来るか。その場所の情報を、いちがめんに集めて答えます。逃げるかどうかは、内閣府のガイドラインに合わせた規則で決め、エーアイは言い換えるだけ。取れない情報は、取れないと書きます。避難先は、その災害で使える場所を、徒歩なんぷんで。",
+  "delay": 1.0,
+  "must_hear": [
+   "ハザードマップ",
+   "内閣府"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kbousai-a-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "台風の夜。うちは、逃げた方がいい？",
+    "sub": "答えの材料は、ハザードマップ・警報・キキクル・台風情報と、ばらばら",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "image",
+   "file": "/home/kojima/work/kbousai-sales/pv/caps/00-typhoon.png",
+   "duration": 6,
+   "zoom_from": 1.02,
+   "zoom_to": 1.1,
+   "origin": [
+    "30%",
+    "45%"
+   ],
+   "telop": {
+    "main": "「台風は直撃する？」",
+    "sub": "進路・暴風域・強風域と、この地点の距離を計算して答える"
+   }
+  },
+  {
+   "type": "image",
+   "file": "/home/kojima/work/kbousai-sales/pv/caps/01-river.png",
+   "duration": 6,
+   "zoom_from": 1.02,
+   "zoom_to": 1.1,
+   "origin": [
+    "70%",
+    "55%"
+   ],
+   "telop": {
+    "main": "「川が氾濫しそう？」",
+    "sub": "周り約2kmの洪水キキクル、最寄りのアメダスの雨量、その場所の浸水の想定"
+   }
+  },
+  {
+   "type": "image",
+   "file": "/home/kojima/work/kbousai-sales/pv/caps/02-evacuate.png",
+   "duration": 6,
+   "zoom_from": 1.02,
+   "zoom_to": 1.1,
+   "origin": [
+    "30%",
+    "55%"
+   ],
+   "telop": {
+    "main": "逃げるかどうかは、規則で決める",
+    "sub": "内閣府ガイドラインの警戒レベルにそろえて判定。AIは言い換えるだけ"
+   }
+  },
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kbousai-b-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.12,
+   "telop": {
+    "main": "取れない情報は「取れない」と書く",
+    "sub": "「発令なし」と「取得できない」を混ぜない。川の水位は公式の画面へ案内",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "image",
+   "file": "/home/kojima/work/kbousai-sales/pv/caps/03-tsunami.png",
+   "duration": 5,
+   "zoom_from": 1.02,
+   "zoom_to": 1.08,
+   "origin": [
+    "30%",
+    "60%"
+   ],
+   "telop": {
+    "main": "避難先は、その災害で使える場所を徒歩何分で",
+    "sub": "指定緊急避難場所（国土地理院）から、津波・洪水・土砂ごとに"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 7,
+   "title": "Kurage 防災AIチャット",
+   "sub": "住所か現在地で、いま逃げた方がいいかに答える。ハザード・警報・観測・避難・被害を1画面に",
+   "url1": "触って試す  kurage.exbridge.jp/kbousai.php/",
+   "url2": "導入版  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3（セルフホスト）"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "台風は直撃する？\n川は？ 津波は？",
+  "sub": "住所か現在地で、いま逃げた方がいいかに答える",
+  "badge": "Kurage 防災AIチャット",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kbousai-a-8s.mp4"
+ }
+}
