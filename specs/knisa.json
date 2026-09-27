@@ -1,0 +1,136 @@
+{
+ "id": "knisa-55s",
+ "name": "Kurage NISA 枠計算・試算 55秒PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "しんニーサの枠、あといくら使えるか、分かりますか。つみたて投資枠は、ねん、ひゃくにじゅうまんえん。成長投資枠は、ねん、にひゃくよんじゅうまんえん。いっしょうで使える枠は、せんはっぴゃくまんえんです。いちばん間違えやすいのは、売ったときです。売っても、その年のねんかんの枠は、戻りません。戻るのは、いっしょうの枠で、しかも、よくねんから、買ったときの金額で戻ります。積み立ての試算は、式で見せます。配当と、企業の利益の伸びを足して、てすうりょうを引きます。結果は、よかった場合と、わるかった場合の、幅で出します。対象商品は、連動する指数ごとに並べ、持っている指数どうしの、かさなりも、示します。特定の商品は、すすめません。",
+  "delay": 1.2,
+  "must_hear": [
+   "枠",
+   "手数料"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-knisa-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "新NISAの枠、あといくら使える？",
+    "sub": "売った分がいつ・いくら戻るかまで、制度どおりに計算",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://proto.exbridge.jp/knisa.php",
+   "duration": 6,
+   "load_seconds": 10,
+   "scroll_to": "#rules-h",
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "25%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "枠のルールは4つだけ",
+    "sub": "年120万円・年240万円・生涯1,800万円・売った分は翌年に復活"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://proto.exbridge.jp/knisa.php?ex=same",
+   "duration": 8,
+   "load_seconds": 10,
+   "scroll_to": "#waku-h",
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "45%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "売った年に買い直すと、上限を超える",
+    "sub": "生涯の枠が戻るのは翌年から。戻る額は買ったときの金額（簿価）"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://proto.exbridge.jp/knisa.php",
+   "duration": 8,
+   "load_seconds": 10,
+   "scroll_to": "#sim-h",
+   "zoom_from": 1.04,
+   "zoom_to": 1.14,
+   "origin": [
+    "50%",
+    "40%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "増える分を、式で分けて見せる",
+    "sub": "年率 ＝ 配当 ＋ 企業の利益の伸び − 信託報酬。結果は幅で"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "月3万円を20年（仮定: 年率4.9%・値動き18%）",
+   "items": [
+    {
+     "value": 720,
+     "label": "払い込んだ元本（万円）"
+    },
+    {
+     "value": 1231,
+     "label": "真ん中の場合（万円）"
+    },
+    {
+     "value": 14,
+     "label": "元本を下回る確率（%）"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://proto.exbridge.jp/knisa.php?ovl=S%26P500|MSCI%20ACWI%20Index",
+   "duration": 8,
+   "load_seconds": 10,
+   "scroll_to": "#chk",
+   "zoom_from": 1.04,
+   "zoom_to": 1.14,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "同じ指数なら、中身はほぼ同じ",
+    "sub": "全世界株とS&P500を両方持つと、米国株が二重になる"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 11,
+   "title": "Kurage NISA 枠計算・試算",
+   "sub": "新NISAの枠の残り・売った分の翌年の復活・積立の幅・対象商品の中身。特定の商品は勧めません。出典：金融庁",
+   "url1": "触って試す  proto.exbridge.jp/knisa.php",
+   "url2": "導入版  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "新NISAの枠、\nあといくら使える？",
+  "sub": "売った分の翌年の復活まで、制度どおりに計算",
+  "badge": "Kurage NISA 枠計算・試算",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-knisa-8s.mp4"
+ }
+}
