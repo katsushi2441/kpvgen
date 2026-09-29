@@ -1,0 +1,127 @@
+{
+ "id": "ktoshikeikaku-50s",
+ "name": "Kurage 都市計画ナビ PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "土地の相談を受けるたびに、都市計画図を拡大して、境目を探していませんか。クラゲ都市計画ナビは、住所を入れるだけで、用途地域と、けんぺいりつ、ようせきりつ、市街化調整区域かどうか、防火地域、近くの都市計画道路までを、いち画面に出します。国土交通省のデータで、全国、せんさんびゃくななじゅうななの、しくちょうそんに対応。条文は原文のまま引用し、AIにも質問できます。AIエージェントからは、エムシーピーで使えます。建てられるかどうかは断定しません。調べる前の、下ごしらえです。",
+  "delay": 1.5,
+  "must_hear": [
+   "用途地域",
+   "国土交通省"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-ktoshikeikaku-a-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "この土地に、何が建てられるのか",
+    "sub": "用途地域・建ぺい率・容積率を、住所ひとつで",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/ktoshikeikaku.php/",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "24%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "住所を入れるだけ",
+    "sub": "全国1,377市区町村の都市計画を収録"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/ktoshikeikaku.php/check?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF2-8-1",
+   "duration": 8,
+   "load_seconds": 20,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "40%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "用途地域・建ぺい率・容積率",
+    "sub": "市街化調整区域・防火地域・都市計画道路まで1画面に"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "収録しているもの",
+   "items": [
+    {
+     "value": 1377,
+     "label": "市区町村"
+    },
+    {
+     "value": 418200,
+     "label": "都市計画の区域"
+    },
+    {
+     "value": 42,
+     "label": "条文の引用"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/ktoshikeikaku.php/city/23100",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.04,
+   "zoom_to": 1.14,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "市区町村ごとの内訳",
+    "sub": "用途地域の面積と、建ぺい率・容積率の組み合わせ"
+   }
+  },
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-ktoshikeikaku-b-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "AIチャットとMCPにも対応",
+    "sub": "答えの材料は、判定結果と条文だけ",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 10,
+   "title": "Kurage 都市計画ナビ",
+   "sub": "住所から用途地域・建ぺい率・容積率・市街化調整区域を。断定はしません。出典：国土交通省 都市局／e-Gov法令検索",
+   "url1": "無料で試す  kurage.exbridge.jp/ktoshikeikaku.php/",
+   "url2": "購入  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "この土地に、\n何が建てられるのか",
+  "sub": "用途地域・建ぺい率・容積率を、住所ひとつで",
+  "badge": "Kurage 都市計画ナビ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-ktoshikeikaku-a-8s.mp4"
+ }
+}
