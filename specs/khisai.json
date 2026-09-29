@@ -1,0 +1,127 @@
+{
+ "id": "khisai-50s",
+ "name": "Kurage 被災者支援ナビ PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "台風や大雨で、家が被害を受けたとき。どんな支援が使えるのか、すぐには分かりません。国の支援制度は、ろくじゅういちページの資料に、およそひゃく、載っています。クラゲ被災者支援ナビは、いまの状況を選ぶだけで、使える制度だけを、資料の本文のまま並べます。住まいの支援の多くは、りさい証明書の区分で決まります。その決まり方も一緒に。AIに聞くと、本文だけを材料に、ページを付けて答えます。対象かどうかは、最後に市町村で確かめてください。",
+  "delay": 1.5,
+  "must_hear": [
+   "支援制度",
+   "市町村"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khisai-a-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "被災したとき、何が使えるのか",
+    "sub": "国の支援制度は、61ページの資料に約100",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/khisai.php/",
+   "duration": 7,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "いまの状況を選ぶだけ",
+    "sub": "住まいの修理・生活資金・子どもの学校・税金や保険料"
+   }
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/khisai.php/check?s=oukyu,hoshu",
+   "duration": 8,
+   "load_seconds": 15,
+   "zoom_from": 1.04,
+   "zoom_to": 1.16,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "使える制度だけを一覧に",
+    "sub": "内容・対象・問い合わせ先を資料の本文のまま"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "収録しているもの",
+   "items": [
+    {
+     "value": 22,
+     "label": "状況"
+    },
+    {
+     "value": 101,
+     "label": "制度・窓口"
+    },
+    {
+     "value": 61,
+     "label": "資料のページ"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/khisai.php/rissai",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.04,
+   "zoom_to": 1.14,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "まず罹災証明書",
+    "sub": "全壊〜準半壊の区分で、使える支援が変わる"
+   }
+  },
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khisai-b2-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "AIにも聞ける",
+    "sub": "答えの材料は制度の本文だけ。ページつき",
+    "at": 0.6
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 10,
+   "title": "Kurage 被災者支援ナビ",
+   "sub": "被災後に使える国の支援制度を状況から。対象の最終確認は市町村で。出典：内閣府（防災担当）",
+   "url1": "無料で使う  kurage.exbridge.jp/khisai.php/",
+   "url2": "自治体・団体の方  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3"
+  }
+ ],
+ "poster": {
+  "time": 3.0,
+  "main": "被災したとき、\n何が使えるのか",
+  "sub": "使える支援制度を、状況から探す",
+  "badge": "Kurage 被災者支援ナビ",
+  "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-khisai-a-8s.mp4"
+ }
+}
