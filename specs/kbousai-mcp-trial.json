@@ -1,0 +1,110 @@
+{
+ "id": "kbousai-mcp-trial",
+ "name": "Kurage 防災AIチャット × 国交省MCP PV",
+ "width": 1920,
+ "height": 1080,
+ "narration": {
+  "reading": "台風の夜、この場所は危ないのか。クラゲ防災AIチャットは、住所ひとつで、警報と浸水の想定、避難先を答えます。AIエージェントからも、エムシーピーで呼び出せます。国土交通省のエムシーピーと並べてつなぐと、AIが自分で道具を選び、周りの病院や駅、スリーディー都市モデルまで探して、一つの答えにまとめました。呼び出しは、当社が2回、国土交通省が21回。答えまで、79秒でした。ふだんは、住所か現在地を入れるだけで、警報、川、台風、避難を、1画面にまとめます。自治体や企業のシステムへの組み込みも、ご相談ください。",
+  "delay": 1.0,
+  "must_hear": [
+   "防災",
+   "国土交通省"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kbousai-a-8s.mp4",
+   "duration": 8,
+   "fit": "blur",
+   "audio_volume": 0.1,
+   "telop": {
+    "main": "この場所は、いま危ないのか",
+    "sub": "大雨・台風の夜に",
+    "at": 0.8
+   }
+  },
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kbousai-sales/pv/demo_clips/mcp-a.mp4",
+   "duration": 7,
+   "fit": "cover",
+   "audio_volume": 0,
+   "telop": {
+    "main": "当社の防災AIチャット（MCP）",
+    "sub": "警報・浸水の想定・避難先を住所から"
+   }
+  },
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kbousai-sales/pv/demo_clips/mcp-b.mp4",
+   "duration": 8,
+   "fit": "cover",
+   "audio_volume": 0,
+   "telop": {
+    "main": "国交省の MCP と並べて",
+    "sub": "周り1kmの病院・駅・PLATEAU（3D都市モデル）"
+   }
+  },
+  {
+   "type": "clip",
+   "file": "/home/kojima/work/kbousai-sales/pv/demo_clips/mcp-c.mp4",
+   "duration": 7,
+   "fit": "cover",
+   "audio_volume": 0,
+   "telop": {
+    "main": "AIが1つの答えにまとめる",
+    "sub": "実際に動かした画面の録画"
+   }
+  },
+  {
+   "type": "stats",
+   "duration": 6,
+   "title": "この1回の質問で",
+   "items": [
+    {
+     "value": 2,
+     "label": "当社MCPの呼び出し"
+    },
+    {
+     "value": 21,
+     "label": "国交省MCPの呼び出し"
+    },
+    {
+     "value": 79,
+     "label": "答えまでの秒数"
+    }
+   ]
+  },
+  {
+   "type": "capture",
+   "url": "https://kurage.exbridge.jp/kbousai.php/",
+   "duration": 6,
+   "load_seconds": 15,
+   "zoom_from": 1.02,
+   "zoom_to": 1.12,
+   "origin": [
+    "50%",
+    "30%"
+   ],
+   "max_white_ratio": 0.95,
+   "telop": {
+    "main": "Kurage 防災AIチャット",
+    "sub": "住所か現在地で、警報・川・台風・避難を1画面に"
+   }
+  },
+  {
+   "type": "endcard",
+   "duration": 10,
+   "title": "Kurage 防災AIチャット",
+   "sub": "住所ひとつで、警報・浸水の想定・避難先。AIエージェントからは MCP で",
+   "url1": "デモ  kurage.exbridge.jp/kbousai.php/",
+   "url2": "組み込みのご相談  kappstore.exbridge.jp",
+   "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+   "credit": "映像生成: MiniMax H3 ／ このサービスは、国土交通データプラットフォームのAPI機能を使用していますが、最新のデータを保証するものではありません。"
+  }
+ ],
+ "poster": {
+  "time": 2
+ }
+}
