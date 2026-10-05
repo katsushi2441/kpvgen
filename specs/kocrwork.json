@@ -1,0 +1,110 @@
+{
+  "id": "kocrwork-pv",
+  "name": "Kurage OCR Work PV",
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "reading": "ファックスで届く、手書きの注文書。毎朝、見ながら打ち込んでいませんか。クラゲ・オーシーアール・ワークは、注文書を読み取って、注文番号、明細、合計に分け、受注登録までつなげる、エーアイ・オーシーアールです。読み取りのエンジンと、生成エーアイの使い方を、書類に合わせて切り替えられます。手書きのファックスは、文字だけで項目に分けると三割ほどしか合いませんでしたが、生成エーアイに画像を見せると、九割を超えました。読み取った内容は、画面で確かめてから登録します。自社のサーバーで動くので、注文書をそとに出しません。まずはデモで、御社の注文書を試してください。",
+    "delay": 1.0,
+    "must_hear": [
+      "注文書",
+      "受注登録"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kocrwork-a-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.12,
+      "telop": {
+        "main": "FAXの注文書、手で打っていませんか",
+        "sub": "毎朝の受注入力",
+        "at": 0.8
+      }
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kocrwork-sales/pv/demo_clips/pick.mp4",
+      "duration": 7,
+      "fit": "cover",
+      "audio_volume": 0,
+      "telop": {
+        "main": "読み方を、書類に合わせて選ぶ",
+        "sub": "OCRエンジン × 生成AIの使い方"
+      }
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kocrwork-sales/pv/demo_clips/result.mp4",
+      "duration": 7,
+      "fit": "cover",
+      "audio_volume": 0,
+      "telop": {
+        "main": "注文番号・明細・合計に分ける",
+        "sub": "公開デモを実際に動かした画面の録画"
+      }
+    },
+    {
+      "type": "stats",
+      "duration": 7,
+      "title": "手書きFAXの見本で、正解と一致した割合",
+      "items": [
+        {
+          "value": 33,
+          "unit": "%",
+          "label": "規則だけ（生成AIなし）"
+        },
+        {
+          "value": 73,
+          "unit": "%",
+          "label": "生成AI（OCRの文字から）"
+        },
+        {
+          "value": 93,
+          "unit": "%",
+          "label": "生成AI（画像を見て）"
+        }
+      ]
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kocrwork-b-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.12,
+      "telop": {
+        "main": "確かめて、受注登録",
+        "sub": "販売管理・基幹へは CSV か JSON で"
+      }
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kocrwork-sales/pv/demo_clips/register.mp4",
+      "duration": 5.5,
+      "fit": "cover",
+      "audio_volume": 0,
+      "telop": {
+        "main": "自社のサーバーで動く",
+        "sub": "生成AIもローカルのモデルを選べる"
+      }
+    },
+    {
+      "type": "endcard",
+      "duration": 9,
+      "title": "Kurage OCR Work",
+      "sub": "AI-OCRで注文書・手書きFAXを読んで受注登録",
+      "url1": "デモ  proto.exbridge.jp/kocrwork.php/",
+      "url2": "導入  kappstore.exbridge.jp",
+      "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+      "credit": "映像生成: MiniMax H3 ／ 見本の注文書は架空の会社・品目で、手書きは手書き風フォントで作ったものです"
+    }
+  ],
+  "poster": {
+    "time": 2,
+    "main": "FAXの注文書、\n手で打っていませんか",
+    "sub": "AI-OCRで読み取って、受注登録へ",
+    "badge": "Kurage OCR Work"
+  }
+}

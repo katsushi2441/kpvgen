@@ -329,12 +329,13 @@ def compose(spec: dict, work: Path, narration: Path | None, narr_delay: float) -
         elif kind == "stats":
             cards = []
             for j, st in enumerate(sc["items"]):
+                unit = esc(st.get("unit", ""))   # 例: "%"。数字のあとに付ける（2026-10-03 追加）
                 cards.append(f'<div class="stat"><b id="num{i}_{j}" '
-                             f'data-target="{st["value"]}">0</b><span>{esc(st["label"])}</span></div>')
+                             f'data-target="{st["value"]}">0{unit}</b><span>{esc(st["label"])}</span></div>')
                 gsap.append(
                     f"const o{i}_{j}={{v:0}};const el{i}_{j}=document.getElementById('num{i}_{j}');"
                     f"tl.to(o{i}_{j},{{v:{st['value']},duration:{min(dur-0.6,1.6):.2f},"
-                    f"ease:'power2.out',onUpdate:()=>{{el{i}_{j}.textContent=Math.round(o{i}_{j}.v).toLocaleString('ja-JP')}}}},{t0+0.35:.2f});")
+                    f"ease:'power2.out',onUpdate:()=>{{el{i}_{j}.textContent=Math.round(o{i}_{j}.v).toLocaleString('ja-JP')+{json.dumps(st.get('unit',''))}}}}},{t0+0.35:.2f});")
             head = f'<div class="stats-head">{esc(sc.get("title"))}</div>' if sc.get("title") else ""
             cols = len(sc["items"]) if len(sc["items"]) <= 3 else 2
             inner = (f'<div class="stats">{head}'
@@ -492,8 +493,40 @@ def verify(spec: dict, out: Path) -> None:
 
 # ── main ───────────────────────────────────────────────────
 
+def lint(spec: dict) -> None:
+    """作る前に、PVとして欠けてはいけないものを確かめる（2026-10-05 追加）。
+    2026-10 の kkansen・kdealdesk・ai-agent-komon などで poster が {"time": 2} だけになり、
+    サムネに製品名もキャッチコピーも載らないまま公開していた。ここで止める。"""
+    errs = []
+    po = spec.get("poster") or {}
+    for k in ("main", "sub", "badge"):
+        if not str(po.get(k, "")).strip():
+            errs.append(f"poster.{k} が無い（サムネに製品名・キャッチコピー・補足を必ず載せる）")
+    clips = [s for s in spec.get("scenes", []) if s.get("type") == "clip"]
+    if len(clips) < 2:
+        errs.append(f"実写クリップが{len(clips)}本（H3の実写を2本以上入れる）")
+    for i, s in enumerate(spec.get("scenes", [])):
+        if s.get("type") in ("clip", "image", "capture") and not (s.get("telop") or {}).get("main"):
+            errs.append(f"scenes[{i}]（{s.get('type')}）に telop.main が無い（全シーンにテロップを入れる）")
+    ends = [s for s in spec.get("scenes", []) if s.get("type") == "endcard"]
+    if clips and not any("H3" in str(e.get("credit", "")) for e in ends):
+        errs.append("endcard.credit に「映像生成: MiniMax H3」が無い")
+    texts = [str(po.get(k, "")) for k in ("main", "sub", "badge")]
+    for s in spec.get("scenes", []):
+        t = s.get("telop") or {}
+        texts += [str(t.get("main", "")), str(t.get("sub", ""))]
+        if s.get("type") == "endcard":
+            texts += [str(s.get(k, "")) for k in ("title", "sub", "url1", "url2", "price")]
+    texts.append(str((spec.get("narration") or {}).get("reading", "")))
+    if any(re.search(r"[0-9０-９,，]+\s*円|万円", x) for x in texts):
+        errs.append("金額が入っている（PVに価格を出さない）")
+    if errs:
+        die("PVの spec が足りない:\n  - " + "\n  - ".join(errs))
+
+
 def build(spec_path: Path, skip_capture: bool) -> None:
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    lint(spec)
     work = ROOT / "outputs" / spec.get("id", spec_path.stem)
     work.mkdir(parents=True, exist_ok=True)
     size = f"{spec.get('width', 1920)}x{spec.get('height', 1080)}"
@@ -629,9 +662,19 @@ def main() -> None:
     b = sub.add_parser("build")
     b.add_argument("spec")
     b.add_argument("--skip-capture", action="store_true")
+    pp = sub.add_parser("poster", help="完成済みの動画からサムネだけ作り直す")
+    pp.add_argument("spec")
     args = ap.parse_args()
     if args.cmd == "build":
         build(Path(args.spec), args.skip_capture)
+    elif args.cmd == "poster":
+        spec = json.loads(Path(args.spec).read_text(encoding="utf-8"))
+        lint(spec)
+        work = ROOT / "outputs" / spec.get("id", Path(args.spec).stem)
+        video = work / f"{spec.get('id', 'pv')}.mp4"
+        if not video.exists():
+            die(f"完成動画が無い: {video}")
+        build_poster(spec, work, video)
 
 
 if __name__ == "__main__":

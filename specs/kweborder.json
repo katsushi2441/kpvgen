@@ -1,0 +1,99 @@
+{
+  "id": "kweborder-pv",
+  "name": "Kurage Web Order PV",
+  "width": 1920,
+  "height": 1080,
+  "narration": {
+    "reading": "ファックスと電話で届く注文を、毎朝、手で打ち込んでいませんか。クラゲ・ウェブ・オーダーは、取引先が自分で注文を入れる、じゅはっちゅうシステムです。取引先はメールアドレスで登録して、品番と数量を並べて注文し、出荷先を選びます。商社がじゅちゅうずみにした時点で注文が成立し、出荷手配、しゅっかずみまで、状態を取引先と同じ画面で確かめられます。ファックスや電話で届いた注文は、商社が代わりに登録できます。受注はシーエスブイで、きかんシステムに取り込みます。自社のサーバーに置けて、げつがくの料金はかかりません。まずはデモで、取引先と商社の、両方の画面を試してください。",
+    "delay": 1.0,
+    "must_hear": [
+      "取引先",
+      "注文"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kweborder-a-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.12,
+      "telop": {
+        "main": "FAXと電話の注文、手で打っていませんか",
+        "sub": "毎朝の受注入力",
+        "at": 0.8
+      }
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kweborder-sales/pv/demo_clips/order.mp4",
+      "duration": 8,
+      "fit": "cover",
+      "audio_volume": 0,
+      "telop": {
+        "main": "取引先が、品番で注文する",
+        "sub": "公開デモを実際に動かした画面の録画"
+      }
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kweborder-sales/pv/demo_clips/ordered.mp4",
+      "duration": 7,
+      "fit": "cover",
+      "audio_volume": 0,
+      "telop": {
+        "main": "出荷先を選んで送る",
+        "sub": "得意先別の価格が自動で入る"
+      }
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kweborder-sales/pv/demo_clips/accept.mp4",
+      "duration": 9,
+      "fit": "cover",
+      "audio_volume": 0,
+      "telop": {
+        "main": "受注済で成立 → 出荷手配 → 出荷済",
+        "sub": "出荷予定日・運送会社・送り状番号も"
+      }
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kpvgen/outputs/h3_queue/h3-kweborder-b-8s.mp4",
+      "duration": 8,
+      "fit": "blur",
+      "audio_volume": 0.12,
+      "telop": {
+        "main": "FAX・電話の注文は代理入力",
+        "sub": "受注はCSVで基幹システムへ"
+      }
+    },
+    {
+      "type": "clip",
+      "file": "/home/kojima/work/kweborder-sales/pv/demo_clips/list.mp4",
+      "duration": 4,
+      "fit": "cover",
+      "audio_volume": 0,
+      "telop": {
+        "main": "自社のサーバーに置ける",
+        "sub": "PHPとSQLiteだけで動く"
+      }
+    },
+    {
+      "type": "endcard",
+      "duration": 9,
+      "title": "Kurage Web Order",
+      "sub": "受発注システムをオンプレミスで",
+      "url1": "デモ  proto.exbridge.jp/kweborder/",
+      "url2": "導入  kappstore.exbridge.jp",
+      "image": "/home/kojima/work/kurage_web/images/kurage-mascot-cutout.png",
+      "credit": "映像生成: MiniMax H3 ／ デモの会社名・商品は架空です"
+    }
+  ],
+  "poster": {
+    "time": 2,
+    "main": "FAXと電話の注文、\n手で打っていませんか",
+    "sub": "取引先が自分でWEBから注文を入れる",
+    "badge": "Kurage Web Order"
+  }
+}
