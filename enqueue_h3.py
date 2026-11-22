@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """MiniMax H3 の8秒実写クリップを rqdb4ai の h3-192-168-0-14 キューに投入する。
 
-  /usr/bin/python3 enqueue_h3.py --prompt "..." --out h3-kghome-8s.mp4 [--seed 20260922] [--wait]
+  /usr/bin/python3 enqueue_h3.py --prompt "..." --out h3-kghome-8s.mp4 [--seed 20260922] [--width 768 --height 1344] [--wait]
 
 完成 mp4 は kpvgen/outputs/h3_queue/<out>。所要は約28分（1344×768×192f）。
 **ComfyUI :8001 を直接叩かない。** 0.14 の GPU は Ollama・ACE-Step と共有で、
@@ -24,6 +24,9 @@ ap.add_argument("--prompt", required=True)
 ap.add_argument("--out", required=True, help="出力ファイル名（mp4）")
 ap.add_argument("--seed", type=int, default=int(time.strftime("%Y%m%d")))
 ap.add_argument("--wait", action="store_true")
+# 縦型ショートの背景用に大きさを変えられる（2026-11-22）。画素数を同じにすれば所要もほぼ同じ（768×1344 なら縦）
+ap.add_argument("--width", type=int, default=0, help="既定はテンプレートの 1344")
+ap.add_argument("--height", type=int, default=0, help="既定はテンプレートの 768")
 a = ap.parse_args()
 
 wf = json.loads((ROOT / "h3_workflow_template.json").read_text(encoding="utf-8"))
@@ -33,6 +36,8 @@ for node in wf.values():
     ins = node.get("inputs", {})
     if ct == "MiniMaxH3ImageToVideo" and "prompt" in ins:
         ins["prompt"] = a.prompt; hit["prompt"] += 1
+        if a.width and a.height:
+            ins["width"], ins["height"] = a.width, a.height
     elif ct == "RandomNoise":
         ins["noise_seed"] = a.seed; hit["seed"] += 1
     elif ct == "SaveVideo":
